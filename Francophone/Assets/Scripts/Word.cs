@@ -6,7 +6,7 @@ public class Word{
     public string Fr { get; set; }
     public string Eng { get; set; }
     public string AudioPath { get; set; }
-    readonly AudioClip AudioFile;
+    public AudioClip AudioFile { get; set; }
 
     public Word()
     {

@@ -11,6 +11,7 @@ public class DictionaryLogic: MonoBehaviour{
     List<Word> WordBank;
     public GameObject ContentArea;
     public GameObject Label;
+    public AudioSource AudioSource;
 
     private void Start()
     {
@@ -56,9 +57,15 @@ public class DictionaryLogic: MonoBehaviour{
         foreach(Word word in PlayerDictionary)
         {
             GameObject label = Instantiate(Label);
-            var button = label.GetComponent<UnityEngine.UI.Button>();
+            var button = label.GetComponent<Button>();
             button.GetComponentInChildren<Text>().text = word.Fr;
             button.transform.SetParent(ContentArea.transform);
         }
+    }
+
+    public void PlayAudio(string txt)
+    {
+        Word word = PlayerDictionary.Find(w => w.Fr == txt);
+        AudioSource.PlayOneShot(word.AudioFile);
     }
 }
