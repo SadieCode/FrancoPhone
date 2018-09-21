@@ -9,9 +9,8 @@ public class DictionaryLogic: MonoBehaviour{
 
     List<Word> PlayerDictionary = new List<Word>();
     List<Word> WordBank;
-    public GameObject ContentArea;
-    public GameObject Label;
-    public AudioSource AudioSource;
+    public Transform DictionaryContent;
+    public SimpleObjectPool WordBtnPool;
 
     private void Start()
     {
@@ -54,18 +53,28 @@ public class DictionaryLogic: MonoBehaviour{
 
     public void OpenDictionary()
     {
-        foreach(Word word in PlayerDictionary)
+        RemoveButtons();
+
+        foreach (Word word in PlayerDictionary)
         {
-            GameObject label = Instantiate(Label);
-            var button = label.GetComponent<Button>();
-            button.GetComponentInChildren<Text>().text = word.Fr;
-            button.transform.SetParent(ContentArea.transform);
+            GameObject newWord = WordBtnPool.GetObject();
+            newWord.transform.SetParent(DictionaryContent);
+            DictionaryLabels dictionaryLabel = newWord.GetComponent<DictionaryLabels>();
+            dictionaryLabel.Setup(word);
         }
     }
 
-    public void PlayAudio(string txt)
+    private void RemoveButtons()
     {
-        Word word = PlayerDictionary.Find(w => w.Fr == txt);
-        AudioSource.PlayOneShot(word.AudioFile);
+        while (DictionaryContent.childCount > 0)
+        {
+            GameObject toRemove = DictionaryContent.GetChild(0).gameObject;
+            WordBtnPool.ReturnObject(toRemove);
+        }
+    }
+
+    public void RefreshDisplay()
+    {
+
     }
 }
