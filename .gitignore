@@ -1,1 +1,7 @@
 Francophone/Library/
+Francophone/Temp/
+Francophone/.vs/
+Francophone/Assembly-CSharp.csproj
+Francophone/Assembly-CSharp-Editor.csproj
+Francophone/Francophone.sln
+Francophone/obj/

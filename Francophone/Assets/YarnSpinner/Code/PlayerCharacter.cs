@@ -62,11 +62,15 @@ namespace Yarn.Unity.Example {
             // Move the player, clamping them to within the boundaries 
             // of the level.
             var movement = Input.GetAxis("Horizontal");
+            var vertical = Input.GetAxis("Vertical");
             movement += movementFromButtons;
+            vertical += movementFromButtons;
             movement *= (moveSpeed * Time.deltaTime);
+            vertical *= (moveSpeed * Time.deltaTime);
 
             var newPosition = transform.position;
             newPosition.x += movement;
+            newPosition.y += vertical;
             newPosition.x = Mathf.Clamp(newPosition.x, minPosition, maxPosition);
 
             transform.position = newPosition;
