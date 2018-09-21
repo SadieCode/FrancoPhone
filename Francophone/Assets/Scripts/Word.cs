@@ -6,10 +6,15 @@ public class Word{
     public string Fr { get; set; }
     public string Eng { get; set; }
     public string AudioPath { get; set; }
-    public AudioClip AudioFile { get; set; }
+    public AudioClip AudioFile;
 
     public Word()
     {
-        AudioFile = (AudioClip) Resources.Load(AudioPath);
+
+    }
+
+    public void SetAudioFile()
+    {
+        AudioFile = Resources.Load<AudioClip>(AudioPath);
     }
 }

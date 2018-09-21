@@ -29,6 +29,11 @@ public class DictionaryLogic: MonoBehaviour{
         textReader.Close();
         WordBank.Sort((x, y) => x.Fr.CompareTo(y.Fr));
 
+        foreach (Word word in WordBank)
+        {
+            word.SetAudioFile();
+        }
+
         //Add starting words to player's dictionary for testing purposes
         AddWord("Rouge");
         AddWord("Bleu");
@@ -39,6 +44,7 @@ public class DictionaryLogic: MonoBehaviour{
     {
         Word newWord = WordBank.Find(w => w.Fr == fr);
         PlayerDictionary.Add(newWord);
+        SortFr();
     }
 
     public void SortFr()
@@ -54,7 +60,6 @@ public class DictionaryLogic: MonoBehaviour{
     public void OpenDictionary()
     {
         RemoveButtons();
-
         foreach (Word word in PlayerDictionary)
         {
             GameObject newWord = WordBtnPool.GetObject();

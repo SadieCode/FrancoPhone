@@ -25,7 +25,6 @@ public class DictionaryLabels : MonoBehaviour {
 	
     public void HandlePress()
     {
-        Debug.Log(Word.AudioPath);
-        //AudioSource.PlayOneShot(Word.AudioFile);
+        AudioSource.PlayOneShot(Word.AudioFile);
     }
 }
