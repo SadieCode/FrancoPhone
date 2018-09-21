@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class DictionaryLogic: MonoBehaviour{
 
@@ -11,9 +12,13 @@ public class DictionaryLogic: MonoBehaviour{
     List<Word> WordBank;
     public Transform DictionaryContent;
     public SimpleObjectPool WordBtnPool;
+    public GameObject DictionaryPanel;
 
     private void Start()
     {
+        //hide dictionary as default state
+        DictionaryPanel.gameObject.SetActive(false);
+
         //for future when save file is enabled
         if (WordBank == null)
         {
@@ -40,6 +45,7 @@ public class DictionaryLogic: MonoBehaviour{
         AddWord("Jaune");
     }
 
+    [YarnCommand("AddWord")]
     public void AddWord(string fr)
     {
         Word newWord = WordBank.Find(w => w.Fr == fr);
@@ -67,6 +73,12 @@ public class DictionaryLogic: MonoBehaviour{
             DictionaryLabels dictionaryLabel = newWord.GetComponent<DictionaryLabels>();
             dictionaryLabel.Setup(word);
         }
+        DictionaryPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseDictionary()
+    {
+        DictionaryPanel.gameObject.SetActive(false);
     }
 
     private void RemoveButtons()
@@ -78,8 +90,9 @@ public class DictionaryLogic: MonoBehaviour{
         }
     }
 
+    /*For future use
     public void RefreshDisplay()
     {
 
-    }
+    }*/
 }

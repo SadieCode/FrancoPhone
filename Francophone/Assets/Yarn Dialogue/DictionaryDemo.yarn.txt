@@ -1,0 +1,64 @@
+title: OrangeGuy
+tags: 
+colorID: 4
+position: 248,299
+---
+<<if visited("OrangeGuy") is false>>
+    Orange Guy: All I know is orange, which is actually what orange is french.
+    Player: Orange?
+    Orange Guy: Orange.
+    <<AddWord GENERAL Orange>>
+    Learned word 'Orange'!
+<<else>>
+    Orange Guy: Orange?
+    -> Orange.
+        Orange Guy: Thanks.
+    -> Orange.
+        Orange Guy: That was rude.
+    -> Orange
+        Orange Guy: *Cries*
+<<endif>>
+===
+title: WordGuy
+tags: 
+colorID: 1
+position: 520,70
+---
+<<if visited("WordGuy") is false>>
+    Man of Many Words: I know many words.
+    -> I love words.
+        Man of Many Words: Right on, enjoy these words.
+    -> I hate words.
+        Man of Many Words: Too bad, learn these words.
+    <<AddWord GENERAL Je>>
+    <<AddWord GENERAL Tu>>
+    <<AddWord GENERAL Il>>
+    <<AddWord GENERAL Elle>>
+    <<AddWord GENERAL Nous>>
+    <<AddWord GENERAL Vous>>
+    <<AddWord GENERAL Ils>>
+    <<AddWord GENERAL Elles>>
+    You just learned so many pronouns. Check your dictionary!
+<<else>>
+    Man of Many Words: I know many words.
+    Player: So do I.
+<<endif>>
+===
+title: ColourGuy
+tags: 
+colorID: 6
+position: -59,94
+---
+<<if visited("ColourGuy") is false>>
+    Colour Guy: Here, take this colour knowledge.
+    <<AddWord GENERAL Vert>>
+    <<AddWord GENERAL Violet>>
+    <<AddWord GENERAL Noir>>
+    <<AddWord GENERAL Blanc>>
+    <<AddWord GENERAL Gris>>
+    <<AddWord GENERAL Brun>>
+    You just learned so many colours. Check your dictionary!
+<<else>>
+    Colour Guy: *He ignores you*
+<<endif>>
+===
