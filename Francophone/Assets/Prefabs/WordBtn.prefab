@@ -107,6 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 114861634452922382}
   txt: {fileID: 114793411116871228}
+  txtFr: {fileID: 0}
+  txtEng: {fileID: 0}
 --- !u!114 &114793411116871228
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -69,7 +69,7 @@ public class DictionaryLogic: MonoBehaviour{
         foreach (Word word in PlayerDictionary)
         {
             GameObject newWord = WordBtnPool.GetObject();
-            newWord.transform.SetParent(DictionaryContent);
+            newWord.transform.SetParent(DictionaryContent, false);
             DictionaryLabels dictionaryLabel = newWord.GetComponent<DictionaryLabels>();
             dictionaryLabel.Setup(word);
         }
