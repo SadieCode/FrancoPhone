@@ -1,0 +1,20 @@
+<Verbs>
+	<Verb>
+		<Fr>Avoir</Fr>
+		<Je>J'ai</Je>
+		<Tu>Tu as</Tu>
+		<Il>Il/Elle a</Il>
+		<Nous>Nous avons</Nous>
+		<Vous>Vous avez</Vous>
+		<Ils>Ils/Elles ont</Ils>
+	</Verb>
+	<Verb>
+		<Fr>Être</Fr>
+		<Je>Je suis</Je>
+		<Tu>Tu es</Tu>
+		<Il>Il/Elle est</Il>
+		<Nous>Nous sommes</Nous>
+		<Vous>Vous êtes</Vous>
+		<Ils>Ils/Elles sont</Ils>
+	</Verb>
+</Verbs>
