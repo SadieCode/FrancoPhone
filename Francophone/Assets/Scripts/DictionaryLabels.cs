@@ -7,12 +7,13 @@ public class DictionaryLabels : MonoBehaviour {
 
     public Button btn;
     public Text txt;
+    AudioSource AudioSource;
 
     Text txtFr;
     Text txtEng;
-
-    AudioSource AudioSource;
-
+    Text txtInf;
+    Text txtEx;
+    Text txtTrans;
     private Word Word;
 
 	// Use this for initialization
@@ -20,20 +21,25 @@ public class DictionaryLabels : MonoBehaviour {
         AudioSource = GameObject.Find("GENERAL").GetComponent<AudioSource>();
         txtFr = GameObject.Find("TxtFr").GetComponent<Text>();
         txtEng = GameObject.Find("TxtEng").GetComponent<Text>();
+        txtInf = GameObject.Find("TxtInf").GetComponent<Text>();
+        txtEx = GameObject.Find("TxtEx").GetComponent<Text>();
+        txtTrans = GameObject.Find("TxtTrans").GetComponent<Text>();
         btn.onClick.AddListener(HandlePress);
     }
 
     public void Setup(Word currentWord)
     {
         Word = currentWord;
-        txt.text = Word.Fr + "/" + Word.Eng;
+        txt.text = Word.Fr + " - " + Word.Eng;
     }
 	
     public void HandlePress()
     {
-        //AudioSource.PlayOneShot(Word.AudioFile);
+
         txtFr.text = Word.Fr;
         txtEng.text = Word.Eng;
-
+        txtInf.text = Word.Inf.Replace("@", "\n");
+        txtEx.text = Word.Ex;
+        txtTrans.text = Word.Trans;
     }
 }

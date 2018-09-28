@@ -2,27 +2,52 @@
 	<Word>
 		<Fr>Rouge</Fr>
 		<Eng>Red</Eng>
+		<Inf>F: Rouge@MPL: Rouges@FPL: Rouges</Inf>
+		<Ex>La voiture &lt;b&gt;rouge&lt;/b&gt; est passée rapidement.</Ex>
+		<Trans>The &lt;b&gt;red&lt;/b&gt; car passed quickly.</Trans>
 		<AudioPath>Audio/rouge</AudioPath>
 	</Word>
 	<Word>
+		<Fr>Jaune</Fr>
+		<Eng>Yellow</Eng>
+		<Inf>F: Jaune@MPL: Jaunes@FPL: Jaunes</Inf>
+		<Ex>Les bananes sont &lt;b&gt;jaunes&lt;/b&gt;.</Ex>
+		<Trans>Bananas are &lt;b&gt;yellow&lt;/b&gt;.</Trans>
+		<AudioPath>Audio/jaune</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Bleu</Fr>
+		<Eng>Blue</Eng>
+		<Inf>F: Bleue@MPL: Bleus@FPL: Bleues</Inf>
+		<Ex>Ma voiture n'est pas rouge mais &lt;b&gt;bleue&lt;/b&gt;.</Ex>
+		<Trans>My car isn't red, it's &lt;b&gt;blue&lt;/b&gt;.</Trans>
+		<AudioPath>Audio/bleu</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Je</Fr>
+		<Eng>I</Eng>
+		<Inf></Inf>
+		<Ex>&lt;b&gt;Je&lt;/b&gt; veux le chocolat.</Ex>
+		<Trans>&lt;b&gt;I&lt;/b&gt; want chocolate.</Trans>
+		<AudioPath>Audio/je</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Être</Fr>
+		<Eng>To be</Eng>
+		<Inf></Inf>
+		<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
+		<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
+		<AudioPath>Audio/etre</AudioPath>
+	</Word>
+	<!--<Word>
 		<Fr>Orange</Fr>
 		<Eng>Orange</Eng>
 		<AudioPath>Audio/orange</AudioPath>
 	</Word>
 	<Word>
-		<Fr>Jaune</Fr>
-		<Eng>Yellow</Eng>
-		<AudioPath>Audio/jaune</AudioPath>
-	</Word>
-	<Word>
 		<Fr>Vert</Fr>
 		<Eng>Green</Eng>
 		<AudioPath>Audio/vert</AudioPath>
-	</Word>
-	<Word>
-		<Fr>Bleu</Fr>
-		<Eng>Blue</Eng>
-		<AudioPath>Audio/bleu</AudioPath>
 	</Word>
 	<Word>
 		<Fr>Violet</Fr>
@@ -48,11 +73,6 @@
 		<Fr>Brun</Fr>
 		<Eng>Brown</Eng>
 		<AudioPath>Audio/brun</AudioPath>
-	</Word>
-	<Word>
-		<Fr>Je</Fr>
-		<Eng>I</Eng>
-		<AudioPath>Audio/je</AudioPath>
 	</Word>
 	<Word>
 		<Fr>Tu</Fr>
@@ -88,5 +108,5 @@
 		<Fr>Elles</Fr>
 		<Eng>They (Feminine)</Eng>
 		<AudioPath>Audio/elles</AudioPath>
-	</Word>
+	</Word>-->
 </Words>

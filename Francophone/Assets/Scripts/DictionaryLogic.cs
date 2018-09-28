@@ -13,6 +13,7 @@ public class DictionaryLogic: MonoBehaviour{
     public Transform DictionaryContent;
     public SimpleObjectPool WordBtnPool;
     public GameObject DictionaryPanel;
+    public GameObject MovementUI;
 
     private void Start()
     {
@@ -65,11 +66,12 @@ public class DictionaryLogic: MonoBehaviour{
 
     public void OpenDictionary()
     {
+        MovementUI.SetActive(false);
         RemoveButtons();
         foreach (Word word in PlayerDictionary)
         {
             GameObject newWord = WordBtnPool.GetObject();
-            newWord.transform.SetParent(DictionaryContent, false);
+            newWord.transform.SetParent(DictionaryContent);
             DictionaryLabels dictionaryLabel = newWord.GetComponent<DictionaryLabels>();
             dictionaryLabel.Setup(word);
         }
@@ -79,6 +81,7 @@ public class DictionaryLogic: MonoBehaviour{
     public void CloseDictionary()
     {
         DictionaryPanel.gameObject.SetActive(false);
+        MovementUI.SetActive(true);
     }
 
     private void RemoveButtons()
