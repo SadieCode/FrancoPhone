@@ -41,6 +41,7 @@ public class SimpleObjectPool : MonoBehaviour
     // Return an instance of the prefab to the pool
     public void ReturnObject(GameObject toReturn)
     {
+        //ResetObject(toReturn);
         PooledObject pooledObject = toReturn.GetComponent<PooledObject>();
 
         // if the instance came from this pool, return it to the pool

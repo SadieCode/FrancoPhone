@@ -14,6 +14,7 @@ public class DictionaryLogic: MonoBehaviour{
     public SimpleObjectPool WordBtnPool;
     public GameObject DictionaryPanel;
     public GameObject MovementUI;
+    public GameObject btnPrefab;
 
     private void Start()
     {
@@ -74,6 +75,7 @@ public class DictionaryLogic: MonoBehaviour{
             newWord.transform.SetParent(DictionaryContent);
             DictionaryLabels dictionaryLabel = newWord.GetComponent<DictionaryLabels>();
             dictionaryLabel.Setup(word);
+            newWord.GetComponent<RectTransform>().localScale = btnPrefab.GetComponent<RectTransform>().localScale;
         }
         DictionaryPanel.gameObject.SetActive(true);
     }

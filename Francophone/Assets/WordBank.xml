@@ -39,12 +39,15 @@
 		<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
 		<AudioPath>Audio/etre</AudioPath>
 	</Word>
-	<!--<Word>
+	<Word>
 		<Fr>Orange</Fr>
 		<Eng>Orange</Eng>
+		<Inf></Inf>
+		<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
+		<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
 		<AudioPath>Audio/orange</AudioPath>
 	</Word>
-	<Word>
+	<!--<Word>
 		<Fr>Vert</Fr>
 		<Eng>Green</Eng>
 		<AudioPath>Audio/vert</AudioPath>
