@@ -1,5 +1,13 @@
 <Words>
 	<Word>
+		<Fr>Bonjour</Fr>
+		<Eng>Hello</Eng>
+		<Inf></Inf>
+		<Ex>Hello. How are you?</Ex>
+		<Trans>Bonjour. Comment allez-vous?</Trans>
+		<AudioPath></AudioPath>
+	</Word>
+	<Word>
 		<Fr>Rouge</Fr>
 		<Eng>Red</Eng>
 		<Inf>F: Rouge@MPL: Rouges@FPL: Rouges</Inf>

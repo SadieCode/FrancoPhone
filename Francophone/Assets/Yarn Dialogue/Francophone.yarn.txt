@@ -1,0 +1,110 @@
+title: Franc
+tags: 
+colorID: 2
+position: 9,251
+---
+<<if visited("Franc") is false>>
+Franc: Now, if you are going to be a wizard, you need a Francophone.
+Player: A Francophone?
+Franc: A Francophone.
+Franc: Francophones are books that store magical knowledge.
+Franc: As you learn more French, your Francophone will expand.
+-> So it's a dictionary?
+    Franc: No, it's a Francophone.
+    Player: Sounds like a dictionary.
+-> Did you invent the Francophone?
+    Franc: No, I did not...
+    Franc: The Francophone was invented by my great-great-great-
+    Franc: great-great-great-great-great-great-great-great-great-
+    Franc: great-grandfather Franc.
+    Player: Wow.
+Franc: Follow this path to the library and speak with the Librarian there.
+Player: Librarian?
+Franc: The Librarian will help you find your Francophone.
+Franc: Return to me when you have it.
+-> Can you repeat that?
+    Franc: No.
+-> Goodbye.
+    Franc: Be quick.
+<<elseif $francophone is true>>
+    Franc: Do you have your Francophone?
+        -> Bonjour
+            Franc: Am I supposed to be impressed?
+        -> Bonjor
+            Franc: I think you mean 'bonjour'.
+        -> Bonjovi
+            Franc: What? Was that a sneeze?
+        Franc: Anyways, now we can begin the real training.
+<<else>>
+    Franc: Do you have your Francophone?
+    -> No...
+            Franc: Well then stop wasting my time.
+<<endif>>
+===
+title: Librarian
+tags: 
+colorID: 1
+position: 268,176
+---
+<<if visited("Librarian") is false>>
+Player: Are you the Librarian?
+Librarian: Yes, I am. How can I help you?
+Player: I'm looking for a Francophone. Franc said you could help me.
+Librarian: Franc?
+Player: Yes, he's going to teach me how to be a great wizard.
+Librarian: Oh dear...
+Librarian: Well, let's try to find your Francophone then.
+Librarian: This bookcase contains all the Francophones we have.
+Librarian: It's important to pick the right one for you.
+Player: Can't I just pick any one?
+Librarian: Oh no! A Francophone is as unique as its owner.
+Player: How will I know which one is right for me?
+Librarian: Just take a look. You'll know when you find the one.
+[[Francophone]]
+<<else>>
+Librarian: I wish you good luck in your studies.
+<<endif>>
+===
+title: Francophone
+tags: 
+colorID: 3
+position: 558,336
+---
+Your hand is drawn towards the bookcase.
+You reach out for the...
+->Top shelf
+->Middle shelf
+->Bottom shelf
+The shelf is full of books of various colours.
+You look towards the...
+->Left side of the shelf
+->Centre of the shelf
+->Right side of the shelf
+As you look at the books one calls out to you. The book is...
+->Red
+->Blue
+->Purple
+->Green
+<<set $francophone to true>>
+<<EquipFrancophone GENERAL>>
+[[Librarian2]]
+===
+title: Librarian2
+tags: 
+colorID: 1
+position: 707,-50
+---
+Librarian: Looks like you found the right one!
+Player: But... This is just a blank book?
+Librarian: Your Francophone is only as powerful as you are.
+Librarian: Here, let me show you...
+Librarian: Do you know how wizards greet each other?
+-> No
+-> They wave?
+-> Hello?
+Librarian: In French we say 'bonjour' to greet each other.
+<<AddWord GENERAL Bonjour>>
+Librarian: Try using that next time you see Franc.
+Librarian: And you should take a look at your Francophone now.
+New word added: Bonjour!
+===

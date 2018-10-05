@@ -15,6 +15,7 @@ public class DictionaryLogic: MonoBehaviour{
     public GameObject DictionaryPanel;
     public GameObject MovementUI;
     public GameObject btnPrefab;
+    public GameObject btnDictionary;
 
     private void Start()
     {
@@ -42,9 +43,9 @@ public class DictionaryLogic: MonoBehaviour{
         }
 
         //Add starting words to player's dictionary for testing purposes
-        AddWord("Rouge");
-        AddWord("Bleu");
-        AddWord("Jaune");
+        //AddWord("Rouge");
+        //AddWord("Bleu");
+        //AddWord("Jaune");
     }
 
     [YarnCommand("AddWord")]
@@ -93,6 +94,12 @@ public class DictionaryLogic: MonoBehaviour{
             GameObject toRemove = DictionaryContent.GetChild(0).gameObject;
             WordBtnPool.ReturnObject(toRemove);
         }
+    }
+
+    [YarnCommand("EquipFrancophone")]
+    public void EquipFrancophone()
+    {
+        btnDictionary.SetActive(true);
     }
 
     /*For future use
