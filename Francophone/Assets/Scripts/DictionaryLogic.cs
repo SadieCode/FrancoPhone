@@ -8,8 +8,8 @@ using Yarn.Unity;
 
 public class DictionaryLogic: MonoBehaviour{
 
-    List<Word> PlayerDictionary = new List<Word>();
-    List<Word> WordBank;
+    public static List<Word> PlayerDictionary = new List<Word>();
+    public static List<Word> WordBank;
     public Transform DictionaryContent;
     public SimpleObjectPool WordBtnPool;
     public GameObject DictionaryPanel;

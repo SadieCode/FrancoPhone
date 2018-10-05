@@ -7,7 +7,7 @@ public class DictionaryLabels : MonoBehaviour {
 
     public Button btn;
     public Text txt;
-    AudioSource AudioSource;
+    //AudioSource AudioSource;
 
     Text txtFr;
     Text txtEng;
@@ -18,7 +18,7 @@ public class DictionaryLabels : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        AudioSource = GameObject.Find("GENERAL").GetComponent<AudioSource>();
+        //AudioSource = GameObject.Find("GENERAL").GetComponent<AudioSource>();
         txtFr = GameObject.Find("TxtFr").GetComponent<Text>();
         txtEng = GameObject.Find("TxtEng").GetComponent<Text>();
         txtInf = GameObject.Find("TxtInf").GetComponent<Text>();
