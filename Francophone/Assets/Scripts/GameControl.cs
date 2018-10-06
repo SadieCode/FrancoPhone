@@ -44,7 +44,7 @@ public class GameControl: MonoBehaviour {
 
     public void Load()
     {
-        if(File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
+        if(FileExists())
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
@@ -57,6 +57,11 @@ public class GameControl: MonoBehaviour {
             DictionaryLogic.WordBank = data.WordBankSave;
 
         }
+    }
+
+    public bool FileExists()
+    {
+        return File.Exists(Application.persistentDataPath + "/playerInfo.dat");
     }
 }
 
