@@ -10,6 +10,8 @@ public class GameControl: MonoBehaviour {
 
     DictionaryLogic script;
     public GameObject player;
+    public GameObject loadingPanel;
+    public GameObject savingPanel;
     float xPos;
     float yPos;
     float zPos;
@@ -69,6 +71,32 @@ public class GameControl: MonoBehaviour {
     public bool FileExists()
     {
         return File.Exists(Application.persistentDataPath + "/playerInfo.dat");
+    }
+
+    public void SaveButton()
+    {
+        StartCoroutine(SavingGamePauser());
+    }
+
+    public void LoadButton()
+    {
+        StartCoroutine(LoadingGamePauser());
+    }
+
+    IEnumerator SavingGamePauser()
+    {
+        savingPanel.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        Save();
+        savingPanel.gameObject.SetActive(false);
+    }
+
+    IEnumerator LoadingGamePauser()
+    {
+        loadingPanel.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        Load();
+        loadingPanel.gameObject.SetActive(false);
     }
 }
 
