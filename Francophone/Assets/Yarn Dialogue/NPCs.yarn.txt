@@ -37,7 +37,7 @@ position: -238,136
 title: Chat
 tags: 
 colorID: 4
-position: 430,53
+position: 430,52
 ---
 <<if visited("Clarice") is false>>
     ???: MEOW MEOW YOWLLLLLLLLL
@@ -62,6 +62,7 @@ position: 430,53
         Chat: Bon? That's all? Perhaps you just aren't accustomed to my level of talent.
     -> Mauvais
         Chat: Well I'd like to see you do better!
+    <<NextObjective GENERAL 0>>
 <<else>>
     Chat: Please leave me to practice MEOW MEOW YOWL
 <<endif>>
@@ -71,6 +72,6 @@ tags:
 colorID: 3
 position: 42,-56
 ---
-<<CompleteQuest GENERAL 0>>
+<<NextObjective GENERAL 0>>
 Quest Completed
 ===

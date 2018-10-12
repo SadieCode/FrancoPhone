@@ -19,7 +19,7 @@ public class TimeLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Debug.Log(stop);
+        //Debug.Log(stop);
         if (!stop)
         {
             min += Time.deltaTime * secondsInMin;

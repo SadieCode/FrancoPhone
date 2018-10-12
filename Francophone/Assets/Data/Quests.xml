@@ -2,7 +2,16 @@
 	<Quest>
 		<Id>0</Id>
 		<Name>Things That Go Bump in the Night</Name>
-		<Description>Investigate the noises behind Clarice's house between 1:00 and 5:00.</Description>
+		<Description>Something is keeping Clarice up at night. Investigate the noises outside her house.</Description>
+		<Objectives>
+			<Objective>
+				<Description>Go to Clarice's house between 1:00 and 5:00</Description>
+			</Objective>
+			<Objective>
+				<Description>Return to Clarice to inform her of the chat</Description>
+			</Objective>
+		</Objectives>
+		<CurrentObjective>0</CurrentObjective>
 		<Status>0</Status>
 	</Quest>
 </Quests>

@@ -10,6 +10,7 @@ public class QuestLabels : MonoBehaviour {
 
     Text txtName;
     Text txtDescription;
+    Text txtObjective;
     private Quest Quest;
 
     // Use this for initialization
@@ -17,6 +18,7 @@ public class QuestLabels : MonoBehaviour {
     {
         txtName = GameObject.Find("TxtName").GetComponent<Text>();
         txtDescription = GameObject.Find("TxtDescription").GetComponent<Text>();
+        txtObjective = GameObject.Find("TxtObjective").GetComponent<Text>();
         btn.onClick.AddListener(HandlePress);
     }
 
@@ -31,5 +33,6 @@ public class QuestLabels : MonoBehaviour {
 
         txtName.text = Quest.Name;
         txtDescription.text = Quest.Description;
+        txtObjective.text = "Current Objective\n" + (Quest.Objectives[Quest.CurrentObjective]).Description;
     }
 }

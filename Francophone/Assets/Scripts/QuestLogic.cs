@@ -26,6 +26,7 @@ public class QuestLogic : MonoBehaviour {
         if (Quests == null)
         {
             InitQuests();
+            AddQuest("0");
         }
     }
 
@@ -35,7 +36,6 @@ public class QuestLogic : MonoBehaviour {
         TextReader textReader = new StreamReader(@"Assets/Data/Quests.xml");
         Quests = (List<Quest>)deserializer.Deserialize(textReader);
         textReader.Close();
-        Debug.Log(Quests[0].Status);
     }
 
     [YarnCommand("AddQuest")]
@@ -46,18 +46,11 @@ public class QuestLogic : MonoBehaviour {
         CurrentQuests.Add(newQuest);
     }
 
-    /* For future use
-    [YarnCommand("UpdareQuest")]
-    public void UpdateQuest(string id)
+    [YarnCommand("NextObjective")]
+    public void NextObjective(string id)
     {
-        Quest quest = CurrentQuests.Find(q => q.Id == int.Parse(id));
-    }*/
-
-    [YarnCommand("CompleteQuest")]
-    public void CompleteQuest(string id)
-    {
-        Quest quest = CurrentQuests.Find(q => q.Id == int.Parse(id));
-        quest.Status = 2;
+        Quest quest = Quests.Find(q => q.Id == int.Parse(id));
+        quest.NextObjective();
     }
 
     public void OpenQuest()
