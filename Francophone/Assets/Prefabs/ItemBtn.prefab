@@ -257,8 +257,9 @@ MonoBehaviour:
   txtQuantity: {fileID: 114586312912010394}
   txtItemName: {fileID: 114352135331605938}
   img: {fileID: 114357657136736658}
-  wordPotion: {fileID: 21300000, guid: 6408ef1ae1fa6814f8a7bfa499b35c87, type: 3}
-  randomPotion: {fileID: 21300000, guid: eb84109309538fd41ae79fb4d7a15b19, type: 3}
+  potionImages:
+  - {fileID: 21300000, guid: 6408ef1ae1fa6814f8a7bfa499b35c87, type: 3}
+  - {fileID: 21300000, guid: 6408ef1ae1fa6814f8a7bfa499b35c87, type: 3}
 --- !u!222 &222060096734350448
 CanvasRenderer:
   m_ObjectHideFlags: 1
