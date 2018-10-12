@@ -1,0 +1,8 @@
+<Quests>
+	<Quest>
+		<Id>0</Id>
+		<Name>Things That Go Bump in the Night</Name>
+		<Description>Investigate the noises behind Clarice's house between 1:00 and 5:00.</Description>
+		<Status>0</Status>
+	</Quest>
+</Quests>

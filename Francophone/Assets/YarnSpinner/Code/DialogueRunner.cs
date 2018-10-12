@@ -210,6 +210,7 @@ namespace Yarn.Unity
         {
             // Mark that we're in conversation.
             isDialogueRunning = true;
+            TimeLogic.stop = true;
 
             // Signal that we're starting up.
             yield return StartCoroutine(this.dialogueUI.DialogueStarted());
@@ -262,6 +263,7 @@ namespace Yarn.Unity
             // to allow time for any animations that might run while transitioning
             // out of a conversation (ie letterboxing going away, etc)
             isDialogueRunning = false;
+            TimeLogic.stop = false;
         }
 
         /// Clear the dialogue system

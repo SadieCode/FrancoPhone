@@ -1,0 +1,19 @@
+Important:
+
+-redo camera
+-fix collisions
+-fix scaling for panels
+-fix audio for dictionary
+-add all audio clips
+-make pooling shared for all objects
+-Improve dictionary efficiency
+	-Apply fix to similar scripts
+-fix jerky animation (may be tied to camera issues)
+-camera and player bounds
+-consistent sprites
+-add steps class for quests
+
+Would like to:
+
+-Add colours to transitions for day/night cycle
+-quest archive

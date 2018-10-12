@@ -1,0 +1,163 @@
+<Words>
+	<Word>
+		<Fr>Chat</Fr>
+		<Eng>Cat</Eng>
+		<Inf>MPL: Chats</Inf>
+		<Ex>Ma tante a un chat noir.</Ex>
+		<Trans>My aunt has a black cat.</Trans>
+		<AudioPath></AudioPath>
+	</Word>
+	<Word>
+		<Fr>Bonjour</Fr>
+		<Eng>Hello</Eng>
+		<Inf></Inf>
+		<Ex>Bonjour. Comment allez-vous?</Ex>
+		<Trans>Hello. How are you?</Trans>
+		<AudioPath></AudioPath>
+	</Word>
+	<Word>
+		<Fr>Horrible</Fr>
+		<Eng>Horrible</Eng>
+		<Inf>F: Horrible@MPL: Horribles@FPL: Horribles</Inf>
+		<Ex>Le temps a été horrible toute la semaine.</Ex>
+		<Trans>The weather was horrible the whole week.</Trans>
+		<AudioPath></AudioPath>
+	</Word>
+	<Word>
+		<Fr>Mauvais</Fr>
+		<Eng>Bad</Eng>
+		<Inf>F: Mauvaise@MPL: Mauvais@FPL: Mauvaises</Inf>
+		<Ex>La réception de la télévision était mauvaise.</Ex>
+		<Trans>The television reception was bad.</Trans>
+		<AudioPath></AudioPath>
+	</Word>
+	<Word>
+		<Fr>Bon</Fr>
+		<Eng>Good</Eng>
+		<Inf>F: Bonne@MPL: Bons@FPL: Bonnes</Inf>
+		<Ex>C'est un bon danseur.</Ex>
+		<Trans>He's a good dancer.</Trans>
+		<AudioPath></AudioPath>
+	</Word>
+	<Word>
+		<Fr>Incroyable</Fr>
+		<Eng>Incredible</Eng>
+		<Inf>F: Incroyable@MPL: Incroyables@FPL: Incroyables</Inf>
+		<Ex>Il lui arrive toujours des aventures incroyables pendant ses voyages.</Ex>
+		<Trans>He always has incredible adventures on his travels.</Trans>
+		<AudioPath></AudioPath>
+	</Word>
+	<Word>
+		<Fr>Rouge</Fr>
+		<Eng>Red</Eng>
+		<Inf>F: Rouge@MPL: Rouges@FPL: Rouges</Inf>
+		<Ex>La voiture &lt;b&gt;rouge&lt;/b&gt; est passée rapidement.</Ex>
+		<Trans>The &lt;b&gt;red&lt;/b&gt; car passed quickly.</Trans>
+		<AudioPath>Audio/rouge</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Jaune</Fr>
+		<Eng>Yellow</Eng>
+		<Inf>F: Jaune@MPL: Jaunes@FPL: Jaunes</Inf>
+		<Ex>Les bananes sont &lt;b&gt;jaunes&lt;/b&gt;.</Ex>
+		<Trans>Bananas are &lt;b&gt;yellow&lt;/b&gt;.</Trans>
+		<AudioPath>Audio/jaune</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Bleu</Fr>
+		<Eng>Blue</Eng>
+		<Inf>F: Bleue@MPL: Bleus@FPL: Bleues</Inf>
+		<Ex>Ma voiture n'est pas rouge mais &lt;b&gt;bleue&lt;/b&gt;.</Ex>
+		<Trans>My car isn't red, it's &lt;b&gt;blue&lt;/b&gt;.</Trans>
+		<AudioPath>Audio/bleu</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Je</Fr>
+		<Eng>I</Eng>
+		<Inf></Inf>
+		<Ex>&lt;b&gt;Je&lt;/b&gt; veux le chocolat.</Ex>
+		<Trans>&lt;b&gt;I&lt;/b&gt; want chocolate.</Trans>
+		<AudioPath>Audio/je</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Être</Fr>
+		<Eng>To be</Eng>
+		<Inf></Inf>
+		<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
+		<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
+		<AudioPath>Audio/etre</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Orange</Fr>
+		<Eng>Orange</Eng>
+		<Inf></Inf>
+		<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
+		<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
+		<AudioPath>Audio/orange</AudioPath>
+	</Word>
+	<!--<Word>
+		<Fr>Vert</Fr>
+		<Eng>Green</Eng>
+		<AudioPath>Audio/vert</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Violet</Fr>
+		<Eng>Purple</Eng>
+		<AudioPath>Audio/violet</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Noir</Fr>
+		<Eng>Black</Eng>
+		<AudioPath>Audio/noir</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Blanc</Fr>
+		<Eng>White</Eng>
+		<AudioPath>Audio/blanc</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Gris</Fr>
+		<Eng>Grey</Eng>
+		<AudioPath>Audio/gris</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Brun</Fr>
+		<Eng>Brown</Eng>
+		<AudioPath>Audio/brun</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Tu</Fr>
+		<Eng>You</Eng>
+		<AudioPath>Audio/tu</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Il</Fr>
+		<Eng>He</Eng>
+		<AudioPath>Audio/il</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Elle</Fr>
+		<Eng>She</Eng>
+		<AudioPath>Audio/elle</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Nous</Fr>
+		<Eng>We</Eng>
+		<AudioPath>Audio/nous</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Vous</Fr>
+		<Eng>You (Plural)</Eng>
+		<AudioPath>Audio/vous</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Ils</Fr>
+		<Eng>They (Masculine)</Eng>
+		<AudioPath>Audio/ils</AudioPath>
+	</Word>
+	<Word>
+		<Fr>Elles</Fr>
+		<Eng>They (Feminine)</Eng>
+		<AudioPath>Audio/elles</AudioPath>
+	</Word>-->
+</Words>

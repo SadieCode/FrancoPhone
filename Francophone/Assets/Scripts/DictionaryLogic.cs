@@ -32,7 +32,7 @@ public class DictionaryLogic: MonoBehaviour{
     private void InitCompleteDictionary()
     {
         XmlSerializer deserializer = new XmlSerializer(typeof(List<Word>), new XmlRootAttribute("Words"));
-        TextReader textReader = new StreamReader(@"Assets/WordBank.xml");
+        TextReader textReader = new StreamReader(@"Assets/Data/WordBank.xml");
         WordBank = (List<Word>)deserializer.Deserialize(textReader);
         textReader.Close();
         WordBank.Sort((x, y) => x.Fr.CompareTo(y.Fr));
@@ -43,9 +43,11 @@ public class DictionaryLogic: MonoBehaviour{
         }
 
         //Add starting words to player's dictionary for testing purposes
-        //AddWord("Rouge");
-        //AddWord("Bleu");
-        //AddWord("Jaune");
+        AddWord("Bonjour");
+        AddWord("Incroyable");
+        AddWord("Bon");
+        AddWord("Mauvais");
+        AddWord("Horrible");
     }
 
     [YarnCommand("AddWord")]
