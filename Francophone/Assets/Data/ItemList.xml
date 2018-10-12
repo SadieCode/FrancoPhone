@@ -1,0 +1,14 @@
+﻿<Items>
+  <Item>
+    <ItemName>Word</ItemName>
+    <ImageNumber>0</ImageNumber>
+    <Quantity>1</Quantity>
+    <MarkedForDelete>false</MarkedForDelete>
+  </Item>
+  <Item>
+    <ItemName>Random</ItemName>
+    <ImageNumber>1</ImageNumber>
+    <Quantity>1</Quantity>
+    <MarkedForDelete>false</MarkedForDelete>
+  </Item>
+</Items>
