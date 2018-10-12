@@ -16,6 +16,7 @@ public class MainMenuScript : MonoBehaviour {
 
 
 
+
     // Use this for initialization
     void Start () {
         settingsPanel.SetActive(false);
@@ -24,16 +25,16 @@ public class MainMenuScript : MonoBehaviour {
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
         volumeEffectsSlider.value = PlayerPrefs.GetFloat("volumeEffects");
         textSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed");
-        if(PlayerPrefs.GetInt("largeFont") == 1)
+        /*if(PlayerPrefs.GetInt("largeFont") == 1)
         {
             toggleFont.isOn = true;
         }
         else
         {
             toggleFont.isOn = false;
-        }
+        }*/
         
-        Screen.SetResolution(640, 480, false);
+        //Screen.SetResolution(640, 480, false);
 	}
 	
 	// Update is called once per frame

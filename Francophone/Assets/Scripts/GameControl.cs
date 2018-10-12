@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System;
+using UnityEngine.UI;
 
 public class GameControl: MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class GameControl: MonoBehaviour {
     float xPos;
     float yPos;
     float zPos;
+    public GameObject miniMap;
 
     // Use this for initialization
     void Start () {
@@ -57,6 +59,11 @@ public class GameControl: MonoBehaviour {
             DictionaryLogic.WordBank = data.WordBankSave;
 
         }
+    }
+
+    public void toggleMap()
+    {
+        miniMap.SetActive(!miniMap.activeSelf);
     }
 
     public bool FileExists()
