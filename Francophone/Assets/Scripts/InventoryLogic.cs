@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 using System;
+using System.Xml;
 
 public class InventoryLogic : MonoBehaviour {
 
@@ -33,11 +34,15 @@ public class InventoryLogic : MonoBehaviour {
 
     private void InitItemList()
     {
-        
-        XmlSerializer deserializer = new XmlSerializer(typeof(List<Item>), new XmlRootAttribute("Items"));
-        TextReader textReader = new StreamReader(@"Assets/Data/ItemList.xml");
-        ItemList = (List<Item>)deserializer.Deserialize(textReader);
-        textReader.Close();
+        TextAsset textAsset = (TextAsset)Resources.Load("Data/ItemList", typeof(TextAsset));
+        StringReader stringReader = new StringReader(textAsset.text);
+        XmlTextReader reader = new XmlTextReader(stringReader);
+
+        XmlSerializer serial = new XmlSerializer(typeof(List<Item>), new XmlRootAttribute("Items"));
+        ItemList = (List<Item>)serial.Deserialize(reader);
+        stringReader.Close();
+        reader.Close();
+
         ItemList.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
         /*  *
         AddItem("Word");

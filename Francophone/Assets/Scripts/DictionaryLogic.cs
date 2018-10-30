@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,10 +32,15 @@ public class DictionaryLogic: MonoBehaviour{
 
     private void InitCompleteDictionary()
     {
-        XmlSerializer deserializer = new XmlSerializer(typeof(List<Word>), new XmlRootAttribute("Words"));
-        TextReader textReader = new StreamReader(@"Assets/Data/WordBank.xml");
-        WordBank = (List<Word>)deserializer.Deserialize(textReader);
-        textReader.Close();
+        TextAsset textAsset = (TextAsset)Resources.Load("Data/WordBank", typeof(TextAsset));
+        StringReader stringReader = new StringReader(textAsset.text);
+        XmlTextReader reader = new XmlTextReader(stringReader);
+
+        XmlSerializer serial = new XmlSerializer(typeof(List<Word>), new XmlRootAttribute("Words"));
+        WordBank = (List<Word>)serial.Deserialize(reader);
+        stringReader.Close();
+        reader.Close();
+
         WordBank.Sort((x, y) => x.Fr.CompareTo(y.Fr));
 
         foreach (Word word in WordBank)

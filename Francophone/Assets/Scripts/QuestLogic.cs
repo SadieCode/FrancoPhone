@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,10 +33,14 @@ public class QuestLogic : MonoBehaviour {
 
     private void InitQuests()
     {
-        XmlSerializer deserializer = new XmlSerializer(typeof(List<Quest>), new XmlRootAttribute("Quests"));
-        TextReader textReader = new StreamReader(@"Assets/Data/Quests.xml");
-        Quests = (List<Quest>)deserializer.Deserialize(textReader);
-        textReader.Close();
+        TextAsset textAsset = (TextAsset)Resources.Load("Data/Quests", typeof(TextAsset));
+        StringReader stringReader = new StringReader(textAsset.text);
+        XmlTextReader reader = new XmlTextReader(stringReader);
+
+        XmlSerializer serial = new XmlSerializer(typeof(List<Quest>), new XmlRootAttribute("Quests"));
+        Quests = (List<Quest>)serial.Deserialize(reader);
+        stringReader.Close();
+        reader.Close();
     }
 
     [YarnCommand("AddQuest")]
