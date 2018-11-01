@@ -41,6 +41,8 @@ public class GameControl: MonoBehaviour {
         data.playerZpos = zPos;
         data.PlayerDictionarySave = DictionaryLogic.PlayerDictionary;
         data.WordBankSave = DictionaryLogic.WordBank;
+        //ExampleVariableStorage.Save();
+        data.dialogueSave = ExampleVariableStorage.variables;
 
         bf.Serialize(file, data);
         file.Close();
@@ -59,7 +61,7 @@ public class GameControl: MonoBehaviour {
             player.transform.position = new Vector3(data.playerXpos, data.playerYpos, data.playerZpos); 
             DictionaryLogic.PlayerDictionary = data.PlayerDictionarySave;
             DictionaryLogic.WordBank = data.WordBankSave;
-
+            ExampleVariableStorage.variables = data.dialogueSave;
         }
     }
 
@@ -109,4 +111,5 @@ class PlayerData
     public float playerZpos;
     public List<Word> PlayerDictionarySave;
     public List<Word> WordBankSave;
+    public Dictionary<string, Yarn.Value> dialogueSave;
 }
