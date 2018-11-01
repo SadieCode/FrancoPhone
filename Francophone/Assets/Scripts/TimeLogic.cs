@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimeLogic : MonoBehaviour {
 
-    public Light lightSource;
+    //public Light lightSource;
     public Text txtTime;
     static float min = 0;
     public static int hour = 18;
@@ -80,13 +80,15 @@ public class TimeLogic : MonoBehaviour {
                 month = 1;
             }
 
-            UpdateLight();
+            //Disabling lighting to reduce build time for now
+            //UpdateLight();
             txtTime.text = hour.ToString().PadLeft(2, '0') + ":" + ((int)min).ToString().PadLeft(2, '0') +
                 " " + day +"/" + month;
         }
     }
 
-    void UpdateLight()
+    //disabled for now
+    /*void UpdateLight()
     {
         if(hour >= 18 && hour <= 21)
         {
@@ -103,7 +105,7 @@ public class TimeLogic : MonoBehaviour {
                 lightSource.intensity += Time.deltaTime/200.0f;
             }
         }
-    }
+    }*/
 
     public void OpenCalendar()
     {
