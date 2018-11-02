@@ -19,7 +19,6 @@
     <Inf></Inf>
     <Ex>S'il te plaît et merci.</Ex>
     <Trans>Please and thank you.</Trans>
-    <AudioPath></AudioPath>
   </Word>
   <Word>
     <Fr>Bienvenue</Fr>
@@ -27,7 +26,6 @@
     <Inf></Inf>
     <Ex>Vous êtes les bienvenus.</Ex>
     <Trans>You are welcome.</Trans>
-    <AudioPath></AudioPath>
   </Word>
 	<Word>
 		<Fr>Horrible</Fr>
@@ -57,6 +55,57 @@
 		<Ex>Il lui arrive toujours des aventures incroyables pendant ses voyages.</Ex>
 		<Trans>He always has incredible adventures on his travels.</Trans>
 	</Word>-->
+	<Word>
+		<Fr>Août</Fr>
+		<Eng>August</Eng>
+	</Word>
+	<Word>
+		<Fr>Avril</Fr>
+		<Eng>April</Eng>
+		<Inf></Inf>
+		<Ex>Poisson d'avril!</Ex>
+		<Trans>April Fools!</Trans>
+	</Word>
+	<Word>
+		<Fr>Décembre</Fr>
+		<Eng>December</Eng>
+	</Word>
+	<Word>
+		<Fr>Dimanche</Fr>
+		<Eng>Sunday</Eng>
+	</Word>
+	<Word>
+		<Fr>Février</Fr>
+		<Eng>February</Eng>
+	</Word>
+	<Word>
+		<Fr>Juillet</Fr>
+		<Eng>July</Eng>
+	</Word>
+	<Word>
+		<Fr>Janvier</Fr>
+		<Eng>January</Eng>
+	</Word>
+	<Word>
+		<Fr>Jeudi</Fr>
+		<Eng>Thursday</Eng>
+	</Word>
+	<Word>
+		<Fr>Lundi</Fr>
+		<Eng>Monday</Eng>
+	</Word>
+	<Word>
+		<Fr>Mai</Fr>
+		<Eng>May</Eng>
+	</Word>
+	<Word>
+		<Fr>Mardi</Fr>
+		<Eng>Tuesday</Eng>
+	</Word>
+	<Word>
+		<Fr>Mercredi</Fr>
+		<Eng>Wednesday</Eng>
+	</Word>
 	<Word>
 		<Fr>Rouge</Fr>
 		<Eng>Red</Eng>

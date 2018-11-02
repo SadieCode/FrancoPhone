@@ -95,10 +95,20 @@ Claude: Sir, my mom says I'm not allowed to do time magic.
 Franc: Yes, time magic can be very dangerous.
 Franc: Which is why we must practice the fundamentals.
 Franc: This is the part where we would learn lots of words if we had time.
-Franc: But we don't so class dismissed!
+Franc: But we don't have time!
+You instantly gained all knowledge of days of the week and months.
 <<SetReady LessonMgr>>
 <<ChangeMode TimeController>>
 <<set $lesson1 to true>>
+<<AddWord GENERAL Avril>>
+<<AddWord GENERAL Dimanche>>
+<<AddWord GENERAL Juillet>>
+<<AddWord GENERAL Janvier>>
+<<AddWord GENERAL Jeudi>>
+<<AddWord GENERAL Lundi>>
+<<AddWord GENERAL Mai>>
+<<AddWord GENERAL Mardi>>
+<<AddWord GENERAL Mercredi>>
 ===
 title: ClariceStudy
 tags: 
@@ -106,12 +116,12 @@ colorID: 0
 position: -598,-229
 ---
 <<if visited("ClariceStudy")>>
+    Clarice: Thanks for studying with me!
+<<else>>
     Clarice: Salut...
     Clarice: I noticed you seemed upset after the last test.
     Clarice: I was hoping we could study together today.
     <<StartStudy LessonMgr>>
-<<else>>
-    Clarice: Thanks for studying with me!
 <<endif>>
 ===
 title: JeanStudy
@@ -120,11 +130,11 @@ colorID: 0
 position: -553,-8
 ---
 <<if visited("JeanStudy")>>
+    Jean: Thanks for studying with me!
+<<else>>
     Jean: Salut...
     Jean: I noticed you seemed upset after the last test.
     Jean: I was hoping we could study together today.
     <<StartStudy LessonMgr>>
-<<else>>
-    Jean: Thanks for studying with me!
 <<endif>>
 ===

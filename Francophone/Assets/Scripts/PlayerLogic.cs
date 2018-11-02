@@ -38,7 +38,7 @@ public class PlayerLogic : MonoBehaviour {
             anim.SetBool("isWalking", false);
         }
 
-        rbody.MovePosition(rbody.position + speed *movement_vector * Time.deltaTime);
+        rbody.MovePosition(rbody.position + movement_vector * speed * Time.deltaTime);
 	}
 
     [YarnCommand("IncreaseFriendship")]
