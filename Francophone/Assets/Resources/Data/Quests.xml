@@ -14,4 +14,25 @@
 		<CurrentObjective>0</CurrentObjective>
 		<Status>0</Status>
 	</Quest>
+  <Quest>
+    <Id>10</Id>
+    <Name>Hitting the books</Name>
+    <Description>Richard has asked you to assist him in finding a spell to complete his project.</Description>
+    <Objectives>
+      <Objective>
+        <Description>
+          Go to the library to find "Converting Words to Power". Talk to the librarian.</Description>
+        </Objective>
+      <Objective>
+        <Description>
+          Find "Converting Words to Power". The librarian said to look in the middle of the third row bookshelf</Description>
+        </Objective>
+      <Objective>
+        <Description>Bring the spellbook back to Richard.</Description>
+      </Objective>
+      <CurrentObjective>
+        0</CurrentObjective>
+        <Status>0</Status>
+      </Objectives>
+  </Quest>
 </Quests>

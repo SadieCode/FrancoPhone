@@ -10,7 +10,7 @@ public class InventoryLabels : MonoBehaviour {
     public Text txtItemName;
     public Image img;
 
-    public Sprite[] potionImages; //Enter potion images on ItemBtn Prefab under Potion Images array
+    public Sprite[] itemImages; //Enter item images on ItemBtn Prefab under Potion Images array
     private Item Item;
 
     // Use this for initialization
@@ -23,7 +23,7 @@ public class InventoryLabels : MonoBehaviour {
         Item = currentItem;
         txtItemName.text = Item.ItemName;
         txtQuantity.text = Item.Quantity+"";
-        img.sprite = potionImages[Item.ImageNumber]; 
+        img.sprite = itemImages[Item.ImageNumber]; 
 
         Item.MarkedForDelete = false;
 
@@ -31,7 +31,7 @@ public class InventoryLabels : MonoBehaviour {
 
     public void HandlePress()
     {
-        Item.GetType().GetMethod(Item.ItemName+"Potion").Invoke(Item, null);
+        Item.GetType().GetMethod(Item.ItemLogic).Invoke(Item, null);
         Item.Quantity--;
         txtQuantity.text = Item.Quantity + "";
         if (Item.Quantity <= 0)

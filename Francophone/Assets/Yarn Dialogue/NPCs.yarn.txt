@@ -1,7 +1,7 @@
 title: Clarice
-tags: 
+tags: NPC
 colorID: 3
-position: -238,136
+position: -148,-143
 ---
 <<if visited("Clarice") is false>>
     Clarice: Bonjour... *yawn*
@@ -15,19 +15,18 @@ position: -238,136
         Clarice: Me? Oh no, it's far too dangerous for me.
     -> What time does it happen?
     Clarice: You should come to my house between 1:00 and 5:00
-    <<AddQuest GENERAL 0>>
-    QUEST ADDED
+    [[Things that go bump in the night]]
 <<elseif visited("Chat") is false>>>
     Clarice: Did you take care of the situation?
         ->No...
     Clarice: Well then don't bother talking to me!
-<<elseif visited("Chat") is true and visited("Quest0") is false>>
+<<elseif visited("Chat") is true and $questBumpInTheNightActive is true>>
     Clarice: Did you take care of the situation?
     Player: It was a chat.
     Clarice: A chat? Well I can handle that.
     Clarice: Here take this as a thanks.
     Received item: Potion
-    [[Quest0]]
+    [[Things that go bump in the night]]
 <<else>>
     Clarice: You can go now...
 <<endif>>
@@ -35,9 +34,9 @@ position: -238,136
     
 ===
 title: Chat
-tags: 
+tags: NPC
 colorID: 4
-position: 430,52
+position: -148,63
 ---
 <<if visited("Clarice") is false>>
     ???: MEOW MEOW YOWLLLLLLLLL
@@ -62,16 +61,117 @@ position: 430,52
         Chat: Bon? That's all? Perhaps you just aren't accustomed to my level of talent.
     -> Mauvais
         Chat: Well I'd like to see you do better!
-    <<NextObjective GENERAL 0>>
 <<else>>
     Chat: Please leave me to practice MEOW MEOW YOWL
 <<endif>>
 ===
-title: Quest0
-tags: 
+title: Things that go bump in the night
+tags: Quest
 colorID: 3
-position: 42,-56
+position: 211,-140
 ---
-<<NextObjective GENERAL 0>>
-Quest Completed
+<<if visited("Things that go bump in the night") is false>>
+    <<AddQuest GENERAL 0>>
+    QUEST ADDED
+    <<set $questBumpInTheNightActive = true>> 
+<<elseif $questBumpInTheNightActive is false>>
+    <<CompleteQuest GENERAL 0>>
+    Quest Completed
+<<endif>>
+===
+title: Richard
+tags: NPC
+colorID: 0
+position: -361,-350
+---
+<<if $acceptedQuestHittingTheBooks is false>>
+    Richard: Hey, you there. Come here
+    -> What is it?
+        Richard: I need your help finishing my Capstone demo.
+        Richard: I'm out of time and don't know the spell I need.
+        -> Sure, I can help.
+            Richard: That's great. Go ask the Librarian for help.
+            <<set $acceptedQuestHittingTheBooks = true>>
+            [[Hitting the books]]
+        -> Umm... No?
+        [[Leave]]
+    -> I don't have time for this.
+    [[Leave]]
+<<elseif $FoundConvertingWordsToPower = true>>
+    Player: I found the spellbook you wanted
+    <<RemoveItem GENERAL ConvertingWordsToPower>>
+    Richard: Thank you, now let me see here....
+    Richard: Ah I got it. "Terminer mon travail pour moi"
+    -> What does that mean?
+        Richard: It means "Finish my work for me"
+    -> Now what do I get out of this?
+        Richard: Yes yes, hold on. Here have this potion.
+    <<AddItem GENERAL strangePotion>>
+    Strange Potion Added.
+    <<set $questHittingTheBooks = false>>
+    [[Hitting the books]]
+<<endif>>
+===
+title: Leave
+tags: 
+colorID: 0
+position: -645,-348
+---
+You walk away.
+===
+title: Librarian
+tags: NPC
+colorID: 0
+position: -362,-144
+---
+<<if visited("Librarian") is false and $questGetFrancophone is true>>
+    Get Francophone
+    [[Librarian]]
+<<elseif $questHittingTheBooksActive is true>>
+    Librarian: What can I help you with?
+    Player: I need a book to do research on Richard's project.
+    Librarian: Why? .. Oh nevermind. 
+    Librarian: You could use Converting Words to Power.
+    Librarian: It's on the third shelf in the middle.
+    -> Thanks
+    -> Mecri?
+        Player: What did I just say?
+        Librarian: You said "Thank you" in French. And Bienvenue!
+        <<AddWord GENERAL Merci>>
+        <<AddWord GENERAL Bienvenue>>
+        Words learnt : Merci and Bienvenue
+    <<NextObjective GENERAL 10>>
+<<endif>>
+===
+title: Hitting the books
+tags: Quest
+colorID: 0
+position: 214,-345
+---
+<<if visited("Hitting the books") is false>>
+    <<AddQuest GENERAL 10>>
+    QUEST ADDED : Hitting the books
+    <<set $questHittingTheBooksActive = true>>
+<<elseif $questHittingTheBooksActive is false>>
+    <<CompleteQuest GENERAL 10>>
+    QUEST COMPLETED!
+<<endif>>
+===
+title: BookConvertWordsToPower
+tags: QuestItem Quest
+colorID: 0
+position: 420,-346
+---
+<<if $FoundConvertWordsToPower is false>>
+    Found the book called "Convert Words to Power - By Prof. J.D.G.M. The third"
+    ->Take the book.
+        You pick up the book.
+        <<AddItem GENERAL ConvertingWordsToPower>>
+        <<NextObjective GENERAL 10>>
+        <<set $FoundConvertingWordsToPower = true>>
+    ->Leave it.
+        [[Leave]]
+<<elseif $FoundConvertingWordsToPower is true>>
+    You already have this book.
+<<endif>>
 ===

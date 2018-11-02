@@ -44,49 +44,59 @@ public class InventoryLogic : MonoBehaviour {
         reader.Close();
 
         ItemList.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
-        /*  *
+
+        //AddItem("StrangePotion");
+        /* For test purposes
         AddItem("Word");
         AddItem("Random");
         AddItem("Random");
-        /**/
+        
         /*  To show dynamic list scrolling */
+        /*
         for(int i = 0; i <= 100; i++)
         {
             AddItem("Word");
         }
-        /**/
+        */
     }
 
     [YarnCommand("AddItem")]
-    public void AddItem(string itemName)
+    public void AddItem(string itemLogic)
     {
-        /* To show dynamic list scrolling */
+        //For test purposes
+        /* To show dynamic list scrolling 
         Item newItem = ItemList.Find(item => item.ItemName == itemName);
         PlayerInventory.Add(newItem);
         SortInv();
-        /**/
-        /* *
-        bool existingItem = PlayerInventory.Any(item => item.ItemName == itemName);
+        */
+
+        /* This block is the logic for the inventory
+            If the item is not in the inventory add entry
+            Else increase the amount of the item
+        */
+        /* */
+        bool existingItem = PlayerInventory.Any(item => item.ItemLogic == itemLogic);
         if (existingItem)
         {
-            int itemIndex = PlayerInventory.FindIndex(item => item.ItemName == itemName);
+            int itemIndex = PlayerInventory.FindIndex(item => item.ItemLogic == itemLogic);
             PlayerInventory[itemIndex].Quantity++;
         }
         else
         {
-            Item newItem = ItemList.Find(item => item.ItemName == itemName);
+            Item newItem = ItemList.Find(item => item.ItemLogic == itemLogic);
             PlayerInventory.Add(newItem);
             SortInv();
         }
         /**/
     }
-
-    public void RemoveItem(string itemName)
+    
+    [YarnCommand("RemoveItem")]
+    public void RemoveItem(string itemLogic)
     {
-        bool existingItem = PlayerInventory.Any(item => item.ItemName == itemName);
+        bool existingItem = PlayerInventory.Any(item => item.ItemLogic == itemLogic);
         if (existingItem)
         {
-            int itemIndex = PlayerInventory.FindIndex(item => item.ItemName == itemName);
+            int itemIndex = PlayerInventory.FindIndex(item => item.ItemLogic == itemLogic);
             PlayerInventory.RemoveAt(itemIndex);
             SortInv();
         }
@@ -126,7 +136,7 @@ public class InventoryLogic : MonoBehaviour {
     }
 
     [YarnCommand("EquipBackpack")]
-    public void EquipFrancophone()
+    public void EquipBackPack()
     {
         btnInventory.SetActive(true);
     }
