@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using Yarn.Unity;
 
 public class PlayerLogic : MonoBehaviour {
 
     Rigidbody2D rbody;
     Animator anim;
     private float speed = 1.5f;
+
+    public static int clariceFRN = 0;
+    public static int amelieFRN = 0;
+    public static int jeanFRN = 0;
+    public static int claudeFRN = 0;
+    public static int margotFRN = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -33,4 +40,21 @@ public class PlayerLogic : MonoBehaviour {
 
         rbody.MovePosition(rbody.position + speed *movement_vector * Time.deltaTime);
 	}
+
+    [YarnCommand("IncreaseFriendship")]
+    public void IncreaseFriendship(string name)
+    {
+        switch (name)
+        {
+            case "Clarice":
+                clariceFRN += 5;
+                break;
+            case "Jean":
+                jeanFRN += 5;
+                break;
+            default:
+                Debug.Log("Error: name not found");
+                break;
+        }
+    }
 }

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class TimeLogic : MonoBehaviour {
 
     //public Light lightSource;
     public Text txtTime;
     static float min = 0;
-    public static int hour = 18;
+    public static int hour = 8;
     public static int day = 2;
     public static int weekDay = 6; //1 = sunday, 2 = monday... so on
     public static int month = 11;
@@ -16,9 +17,12 @@ public class TimeLogic : MonoBehaviour {
     float secondsInMin = 1f;
     public static bool stop = false;
 
+    public GameObject player;
     public GameObject calendarPanel;
     public GameObject calendar;
     public GameObject daysPanel;
+    public GameObject warpPanel;
+    public Transform playerSpawn;
     public Text monthLabel;
     Text[] dayLabels;
 
@@ -29,7 +33,7 @@ public class TimeLogic : MonoBehaviour {
     Image[] calendarDayBoxes;
 
     //0 = english, 1 = french
-    public static int mode = 1;
+    public static int mode = 0;
 
     string[] monthsFr = {"janvier","février","mars","avril","mai","juin","juillet",
         "août","septembre","octobre","novembre","décembre"};
@@ -154,9 +158,26 @@ public class TimeLogic : MonoBehaviour {
         }
     }
 
+    [YarnCommand("ChangeMode")]
     public void ChangeMode()
     {
         mode = 1;
         RedrawCalendar();
+    }
+
+    public void Sleep()
+    {
+        HideScreen();
+        day++;
+        weekDay++;
+        hour = 8;
+        min = 0;
+        player.transform.position = playerSpawn.position;
+        Invoke("HideScreen", 1.0f);
+    }
+
+    void HideScreen()
+    {
+        warpPanel.SetActive(!warpPanel.activeSelf);
     }
 }

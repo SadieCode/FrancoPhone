@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 2018-10-04 11:19:50 PM-->
+<!--Last exported: 2018-11-02 4:06:12 AM-->
 <Tiled2Unity version="1.0.13.2">
   <AssignMaterial mesh="Map_mesh_0001" material="grass" />
   <AssignMaterial mesh="Map_mesh_0002" material="watergrass" />
@@ -45,7 +45,7 @@
       <GameObject name="trunk" x="0" y="0" mesh="Map_mesh_0008" sortingLayerName="" sortingOrder="5" opacity="1" />
       <GameObject name="victoria" x="0" y="0" mesh="Map_mesh_0009" sortingLayerName="" sortingOrder="5" opacity="1" />
     </GameObject>
-    <GameObject name="Player" x="0" y="0" z="0">
+    <GameObject name="PlayerLayer" x="0" y="0" z="0">
       <TileLayer offsetX="0" offsetY="0" />
     </GameObject>
     <GameObject name="SchoolWallsFront" x="0" y="0" z="0">
@@ -60,7 +60,7 @@
     </GameObject>
     <GameObject name="Collisions" x="0" y="0" z="0">
       <TileLayer offsetX="0" offsetY="0" />
-      <GameObject name="RED" x="0" y="0" mesh="Map_mesh_0014" sortingLayerName="" sortingOrder="9" opacity="1" />
+      <GameObject name="RED" x="0" y="0" mesh="Map_mesh_0014" sortingLayerName="" sortingOrder="9" opacity="0.59" />
       <GameObject name="Collision">
         <PolygonCollider2D>
           <Path>19.19,-8.32 19.19,0 18.88,0 18.88,-8.32</Path>

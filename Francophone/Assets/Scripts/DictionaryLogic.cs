@@ -17,6 +17,7 @@ public class DictionaryLogic: MonoBehaviour{
     public GameObject MovementUI;
     public GameObject btnPrefab;
     public GameObject btnDictionary;
+    public GameObject wordPanel;
 
     private void Start()
     {
@@ -43,17 +44,9 @@ public class DictionaryLogic: MonoBehaviour{
 
         WordBank.Sort((x, y) => x.Fr.CompareTo(y.Fr));
 
-        foreach (Word word in WordBank)
-        {
-            word.SetAudioFile();
-        }
-
         //Add starting words to player's dictionary for testing purposes
-        AddWord("Bonjour");
-        AddWord("Incroyable");
-        AddWord("Bon");
-        AddWord("Mauvais");
-        AddWord("Horrible");
+        AddWord("Rouge");
+        AddWord("Bleu");
     }
 
     [YarnCommand("AddWord")]
@@ -86,6 +79,12 @@ public class DictionaryLogic: MonoBehaviour{
             dictionaryLabel.Setup(word);
             newWord.GetComponent<RectTransform>().localScale = btnPrefab.GetComponent<RectTransform>().localScale;
         }
+
+        foreach (Text text in wordPanel.GetComponentsInChildren<Text>())
+        {
+            text.text = null;
+        }
+
         DictionaryPanel.gameObject.SetActive(true);
     }
 

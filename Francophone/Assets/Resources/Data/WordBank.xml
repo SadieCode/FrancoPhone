@@ -1,11 +1,10 @@
 <Words>
-	<Word>
+	<!--<Word>
 		<Fr>Chat</Fr>
 		<Eng>Cat</Eng>
 		<Inf>MPL: Chats</Inf>
 		<Ex>Ma tante a un chat noir.</Ex>
 		<Trans>My aunt has a black cat.</Trans>
-		<AudioPath></AudioPath>
 	</Word>
 	<Word>
 		<Fr>Bonjour</Fr>
@@ -13,7 +12,6 @@
 		<Inf></Inf>
 		<Ex>Bonjour. Comment allez-vous?</Ex>
 		<Trans>Hello. How are you?</Trans>
-		<AudioPath></AudioPath>
 	</Word>
 	<Word>
 		<Fr>Horrible</Fr>
@@ -21,7 +19,6 @@
 		<Inf>F: Horrible@MPL: Horribles@FPL: Horribles</Inf>
 		<Ex>Le temps a été horrible toute la semaine.</Ex>
 		<Trans>The weather was horrible the whole week.</Trans>
-		<AudioPath></AudioPath>
 	</Word>
 	<Word>
 		<Fr>Mauvais</Fr>
@@ -29,7 +26,6 @@
 		<Inf>F: Mauvaise@MPL: Mauvais@FPL: Mauvaises</Inf>
 		<Ex>La réception de la télévision était mauvaise.</Ex>
 		<Trans>The television reception was bad.</Trans>
-		<AudioPath></AudioPath>
 	</Word>
 	<Word>
 		<Fr>Bon</Fr>
@@ -37,7 +33,6 @@
 		<Inf>F: Bonne@MPL: Bons@FPL: Bonnes</Inf>
 		<Ex>C'est un bon danseur.</Ex>
 		<Trans>He's a good dancer.</Trans>
-		<AudioPath></AudioPath>
 	</Word>
 	<Word>
 		<Fr>Incroyable</Fr>
@@ -45,15 +40,13 @@
 		<Inf>F: Incroyable@MPL: Incroyables@FPL: Incroyables</Inf>
 		<Ex>Il lui arrive toujours des aventures incroyables pendant ses voyages.</Ex>
 		<Trans>He always has incredible adventures on his travels.</Trans>
-		<AudioPath></AudioPath>
-	</Word>
+	</Word>-->
 	<Word>
 		<Fr>Rouge</Fr>
 		<Eng>Red</Eng>
 		<Inf>F: Rouge@MPL: Rouges@FPL: Rouges</Inf>
 		<Ex>La voiture &lt;b&gt;rouge&lt;/b&gt; est passée rapidement.</Ex>
 		<Trans>The &lt;b&gt;red&lt;/b&gt; car passed quickly.</Trans>
-		<AudioPath>Audio/rouge</AudioPath>
 	</Word>
 	<Word>
 		<Fr>Jaune</Fr>
@@ -61,7 +54,6 @@
 		<Inf>F: Jaune@MPL: Jaunes@FPL: Jaunes</Inf>
 		<Ex>Les bananes sont &lt;b&gt;jaunes&lt;/b&gt;.</Ex>
 		<Trans>Bananas are &lt;b&gt;yellow&lt;/b&gt;.</Trans>
-		<AudioPath>Audio/jaune</AudioPath>
 	</Word>
 	<Word>
 		<Fr>Bleu</Fr>
@@ -69,7 +61,6 @@
 		<Inf>F: Bleue@MPL: Bleus@FPL: Bleues</Inf>
 		<Ex>Ma voiture n'est pas rouge mais &lt;b&gt;bleue&lt;/b&gt;.</Ex>
 		<Trans>My car isn't red, it's &lt;b&gt;blue&lt;/b&gt;.</Trans>
-		<AudioPath>Audio/bleu</AudioPath>
 	</Word>
 	<Word>
 		<Fr>Je</Fr>
@@ -77,7 +68,6 @@
 		<Inf></Inf>
 		<Ex>&lt;b&gt;Je&lt;/b&gt; veux le chocolat.</Ex>
 		<Trans>&lt;b&gt;I&lt;/b&gt; want chocolate.</Trans>
-		<AudioPath>Audio/je</AudioPath>
 	</Word>
 	<Word>
 		<Fr>Être</Fr>
@@ -85,7 +75,6 @@
 		<Inf></Inf>
 		<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
 		<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
-		<AudioPath>Audio/etre</AudioPath>
 	</Word>
 	<Word>
 		<Fr>Orange</Fr>
@@ -93,7 +82,6 @@
 		<Inf></Inf>
 		<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
 		<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
-		<AudioPath>Audio/orange</AudioPath>
 	</Word>
 	<!--<Word>
 		<Fr>Vert</Fr>

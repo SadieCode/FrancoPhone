@@ -36,7 +36,7 @@ namespace Yarn.Unity.Example {
 
         public float moveSpeed = 1.0f;
 
-        public float interactionRadius = 2.0f;
+        public float interactionRadius = 0.5f;
 
         public float movementFromButtons {get;set;}
 

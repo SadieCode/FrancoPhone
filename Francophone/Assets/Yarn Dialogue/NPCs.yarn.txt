@@ -1,77 +1,130 @@
 title: Clarice
 tags: 
 colorID: 3
-position: -238,136
+position: -183,11
 ---
-<<if visited("Clarice") is false>>
-    Clarice: Bonjour... *yawn*
-    -> Are you tired?
-    -> Am I boring you?
-        Clarice: Yes, but it's more than that.
-    Clarice: I can't get any sleep!
-    Clarice: Every night I hear awful noises outside my house.
-    Clarice: Can you investigate the noises?
-    -> Why can't you do it?
-        Clarice: Me? Oh no, it's far too dangerous for me.
-    -> What time does it happen?
-    Clarice: You should come to my house between 1:00 and 5:00
-    <<AddQuest GENERAL 0>>
-    QUEST ADDED
-<<elseif visited("Chat") is false>>>
-    Clarice: Did you take care of the situation?
-        ->No...
-    Clarice: Well then don't bother talking to me!
-<<elseif visited("Chat") is true and visited("Quest0") is false>>
-    Clarice: Did you take care of the situation?
-    Player: It was a chat.
-    Clarice: A chat? Well I can handle that.
-    Clarice: Here take this as a thanks.
-    Received item: Potion
-    [[Quest0]]
+<<if $lesson1 is true and $clariceSunday is true>>
+    Clarice: See you dimanche!
+<<elseif $clariceSunday is true>>
+    Clarice: See you Sunday!
+<<elseif visited("Clarice")>>
+    Clarice: I'm trying to study...
+<<elseif $jeanSunday is true>>
+    Clarice: Bonjour!
 <<else>>
-    Clarice: You can go now...
+Clairce: Bonjour!
+Clarice: Do you want to hang out on Sunday?
+-> Oui
+    Clairce: Okay, see you then!
+    <<set $clariceSunday to true>>
+    <<IncreaseFriendship Player Clarice>>
+-> Non
+    Clarice: Oh... alright.
 <<endif>>
 
     
 ===
-title: Chat
+title: Margot
 tags: 
-colorID: 4
-position: 430,52
+colorID: 1
+position: 115,-17
 ---
-<<if visited("Clarice") is false>>
-    ???: MEOW MEOW YOWLLLLLLLLL
-    You can't get its attention.
-<<elseif visited("Chat") is false>>
-    ???: YOWL YOWLLLLLL YOWLLLL
-    Player: Bonjour?
-    ???: MEOW YOWLLL MEOW
-    ???: MEO- Oh, bonjour!
-    Player: A talking cat?
-    Chat: No, I am a talking 'chat'.
-    <<AddWord GENERAL Chat>>
-    Learned new word: Chat (cat)
-    Chat: And I can do more than talk! I can sing!
-    Chat: MEOWWWWWW, how do I sound?
-    -> Incroyable
-        Chat: I am, aren't I? MEOW
-        Chat: I think I'll practice even longer tonight!
-    -> Horrible
-        Chat: How dare you! I'll have you know I'm classically trained in meowing, yowling, AND purring!
-    -> Bon
-        Chat: Bon? That's all? Perhaps you just aren't accustomed to my level of talent.
-    -> Mauvais
-        Chat: Well I'd like to see you do better!
-    <<NextObjective GENERAL 0>>
+<<if visited("Margot")>>
+Margot: *Yawn*
 <<else>>
-    Chat: Please leave me to practice MEOW MEOW YOWL
+Margot: Comment ça va?
+-> Bien
+-> Mal
+-> Comme ci comme ça
+Margot: Moi aussi.
 <<endif>>
 ===
-title: Quest0
+title: Amélie
 tags: 
-colorID: 3
-position: 42,-56
+colorID: 6
+position: 376,-255
 ---
-<<NextObjective GENERAL 0>>
-Quest Completed
+Amélie: Brrrr... The classroom is always too cold!
+===
+title: Claude
+tags: 
+colorID: 2
+position: 375,-6
+---
+Claude: Salut...
+===
+title: Jean
+tags: 
+colorID: 4
+position: 53,234
+---
+<<if $lesson1 is true and $jeanSunday is true>>
+    Jean: See you dimanche!
+<<elseif $jeanSunday is true>>
+    Jean: See you Sunday!
+<<elseif visited("Jean")>>
+    Jean: I'm trying to study...
+<<elseif $clariceSunday is true>>
+    Jean: Bonjour!
+<<else>>
+Jean: Bonjour!
+Jean: Do you want to hang out on Sunday?
+-> Oui
+    Jean: Okay, see you then!
+    <<set $jeanSunday to true>>
+    <<IncreaseFriendship Player Jean>>
+-> Non
+    Jean: Oh... alright.
+<<endif>>
+===
+title: Franc
+tags: 
+colorID: 0
+position: 54,-248
+---
+Franc: Please take your seat.
+===
+title: Lesson1
+tags: 
+colorID: 5
+position: -301,-215
+---
+Franc: Today we are going to learn a very important type of magic.
+Franc: Time magic.
+Claude: Sir, my mom says I'm not allowed to do time magic.
+Franc: Yes, time magic can be very dangerous.
+Franc: Which is why we must practice the fundamentals.
+Franc: This is the part where we would learn lots of words if we had time.
+Franc: But we don't so class dismissed!
+<<SetReady LessonMgr>>
+<<ChangeMode TimeController>>
+<<set $lesson1 to true>>
+===
+title: ClariceStudy
+tags: 
+colorID: 0
+position: -598,-229
+---
+<<if visited("ClariceStudy")>>
+    Clarice: Salut...
+    Clarice: I noticed you seemed upset after the last test.
+    Clarice: I was hoping we could study together today.
+    <<StartStudy LessonMgr>>
+<<else>>
+    Clarice: Thanks for studying with me!
+<<endif>>
+===
+title: JeanStudy
+tags: 
+colorID: 0
+position: -553,-8
+---
+<<if visited("JeanStudy")>>
+    Jean: Salut...
+    Jean: I noticed you seemed upset after the last test.
+    Jean: I was hoping we could study together today.
+    <<StartStudy LessonMgr>>
+<<else>>
+    Jean: Thanks for studying with me!
+<<endif>>
 ===

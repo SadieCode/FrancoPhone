@@ -7,8 +7,9 @@ public class DictionaryLabels : MonoBehaviour {
 
     public Button btn;
     public Text txt;
-    //AudioSource AudioSource;
+    AudioSource audioSource;
 
+    public AudioClip audioClip;
     Text txtFr;
     Text txtEng;
     Text txtInf;
@@ -18,7 +19,7 @@ public class DictionaryLabels : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //AudioSource = GameObject.Find("GENERAL").GetComponent<AudioSource>();
+        audioSource = GameObject.Find("GENERAL").GetComponent<AudioSource>();
         txtFr = GameObject.Find("TxtFr").GetComponent<Text>();
         txtEng = GameObject.Find("TxtEng").GetComponent<Text>();
         txtInf = GameObject.Find("TxtInf").GetComponent<Text>();
@@ -31,15 +32,17 @@ public class DictionaryLabels : MonoBehaviour {
     {
         Word = currentWord;
         txt.text = Word.Fr + " - " + Word.Eng;
+        this.gameObject.name = Word.Fr;
     }
 	
     public void HandlePress()
     {
-
         txtFr.text = Word.Fr;
         txtEng.text = Word.Eng;
         txtInf.text = Word.Inf.Replace("@", "\n");
         txtEx.text = Word.Ex;
         txtTrans.text = Word.Trans;
+        audioClip = Resources.Load<AudioClip>("Audio/" + Word.Fr.ToLower());
+        audioSource.clip = audioClip;
     }
 }

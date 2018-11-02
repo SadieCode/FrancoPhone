@@ -1,0 +1,77 @@
+title: Clarice
+tags: 
+colorID: 3
+position: -238,136
+---
+<<if visited("Clarice") is false>>
+    Clarice: Bonjour... *yawn*
+    -> Are you tired?
+    -> Am I boring you?
+        Clarice: Yes, but it's more than that.
+    Clarice: I can't get any sleep!
+    Clarice: Every night I hear awful noises outside my house.
+    Clarice: Can you investigate the noises?
+    -> Why can't you do it?
+        Clarice: Me? Oh no, it's far too dangerous for me.
+    -> What time does it happen?
+    Clarice: You should come to my house between 1:00 and 5:00
+    <<AddQuest GENERAL 0>>
+    QUEST ADDED
+<<elseif visited("Chat") is false>>
+    Clarice: Did you take care of the situation?
+        ->No...
+    Clarice: Well then don't bother talking to me!
+<<elseif visited("Chat") is true and visited("Quest0") is false>>
+    Clarice: Did you take care of the situation?
+    Player: It was a chat.
+    Clarice: A chat? Well I can handle that.
+    Clarice: Here take this as a thanks.
+    Received item: Potion
+    [[Quest0]]
+<<else>>
+    Clarice: You can go now...
+<<endif>>
+
+    
+===
+title: Chat
+tags: 
+colorID: 4
+position: 430,52
+---
+<<if visited("Clarice") is false>>
+    ???: MEOW MEOW YOWLLLLLLLLL
+    You can't get its attention.
+<<elseif visited("Chat") is false>>
+    ???: YOWL YOWLLLLLL YOWLLLL
+    Player: Bonjour?
+    ???: MEOW YOWLLL MEOW
+    ???: MEO- Oh, bonjour!
+    Player: A talking cat?
+    Chat: No, I am a talking 'chat'.
+    <<AddWord GENERAL Chat>>
+    Learned new word: Chat (cat)
+    Chat: And I can do more than talk! I can sing!
+    Chat: MEOWWWWWW, how do I sound?
+    -> Incroyable
+        Chat: I am, aren't I? MEOW
+        Chat: I think I'll practice even longer tonight!
+    -> Horrible
+        Chat: How dare you! I'll have you know I'm classically trained in meowing, yowling, AND purring!
+    -> Bon
+        Chat: Bon? That's all? Perhaps you just aren't accustomed to my level of talent.
+    -> Mauvais
+        Chat: Well I'd like to see you do better!
+    <<NextObjective GENERAL 0>>
+<<else>>
+    Chat: Please leave me to practice MEOW MEOW YOWL
+<<endif>>
+===
+title: Quest0
+tags: 
+colorID: 3
+position: 42,-56
+---
+<<NextObjective GENERAL 0>>
+Quest Completed
+===
