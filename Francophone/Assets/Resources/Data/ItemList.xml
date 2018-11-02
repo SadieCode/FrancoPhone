@@ -1,13 +1,22 @@
 ﻿<Items>
   <Item>
-    <ItemName>Word</ItemName>
+    <ItemLogic>WordPotion</ItemLogic>
+    <ItemName>Word Potion</ItemName>
     <ImageNumber>0</ImageNumber>
     <Quantity>1</Quantity>
     <MarkedForDelete>false</MarkedForDelete>
   </Item>
   <Item>
-    <ItemName>Random</ItemName>
+    <ItemLogic>ConvertingWordsToPower</ItemLogic>
+    <ItemName>Converting Words To Power</ItemName>
     <ImageNumber>1</ImageNumber>
+    <Quantity>1</Quantity>
+    <MarkedForDelete>false</MarkedForDelete>
+  </Item>
+  <Item>
+    <ItemLogic>StrangePotion</ItemLogic>
+    <ItemName>Strange Potion</ItemName>
+    <ImageNumber>0</ImageNumber>
     <Quantity>1</Quantity>
     <MarkedForDelete>false</MarkedForDelete>
   </Item>

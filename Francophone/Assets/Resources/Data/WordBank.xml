@@ -13,6 +13,22 @@
 		<Ex>Bonjour. Comment allez-vous?</Ex>
 		<Trans>Hello. How are you?</Trans>
 	</Word>
+  <Word>
+    <Fr>Merci</Fr>
+    <Eng>Thank you</Eng>
+    <Inf></Inf>
+    <Ex>S'il te plaît et merci.</Ex>
+    <Trans>Please and thank you.</Trans>
+    <AudioPath></AudioPath>
+  </Word>
+  <Word>
+    <Fr>Bienvenue</Fr>
+    <Eng>Welcome</Eng>
+    <Inf></Inf>
+    <Ex>Vous êtes les bienvenus.</Ex>
+    <Trans>You are welcome.</Trans>
+    <AudioPath></AudioPath>
+  </Word>
 	<Word>
 		<Fr>Horrible</Fr>
 		<Eng>Horrible</Eng>

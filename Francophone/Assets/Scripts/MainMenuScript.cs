@@ -14,8 +14,8 @@ public class MainMenuScript : MonoBehaviour {
     public AudioSource audioSource;
     public Toggle toggleFont;
 
-
-
+    //Game UI objects
+    public GameObject movementUI;
 
     // Use this for initialization
     void Start () {
@@ -25,6 +25,7 @@ public class MainMenuScript : MonoBehaviour {
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
         volumeEffectsSlider.value = PlayerPrefs.GetFloat("volumeEffects");
         textSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed");
+        
         /*if(PlayerPrefs.GetInt("largeFont") == 1)
         {
             toggleFont.isOn = true;
@@ -104,5 +105,4 @@ public class MainMenuScript : MonoBehaviour {
     {
         PlayerPrefs.SetFloat("volume", volumeSlider.value);
     }
-
 }

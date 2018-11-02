@@ -1,7 +1,7 @@
 title: Franc
 tags: 
 colorID: 2
-position: 9,251
+position: 141,-23
 ---
 <<if visited("Franc") is false>>
 Franc: Now, if you are going to be a wizard, you need a Francophone.
@@ -41,7 +41,7 @@ Franc: Return to me when you have it.
             Franc: Well then stop wasting my time.
 <<endif>>
 ===
-title: Librarian
+title: Librarian_Legacy
 tags: 
 colorID: 1
 position: 268,176
@@ -89,7 +89,7 @@ As you look at the books one calls out to you. The book is...
 <<EquipFrancophone GENERAL>>
 [[Librarian2]]
 ===
-title: Librarian2
+title: Librarian2_Legacy
 tags: 
 colorID: 1
 position: 707,-50
