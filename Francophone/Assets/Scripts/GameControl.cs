@@ -40,7 +40,7 @@ public class GameControl: MonoBehaviour {
         data.playerYpos = yPos;
         data.playerZpos = zPos;
         data.PlayerDictionarySave = DictionaryLogic.PlayerDictionary;
-        data.WordBankSave = DictionaryLogic.WordBank;
+        //data.WordBankSave = DictionaryLogic.WordBank;
         //ExampleVariableStorage.Save();
         data.dialogueSave = ExampleVariableStorage.variables;
 
@@ -60,7 +60,7 @@ public class GameControl: MonoBehaviour {
 
             player.transform.position = new Vector3(data.playerXpos, data.playerYpos, data.playerZpos); 
             DictionaryLogic.PlayerDictionary = data.PlayerDictionarySave;
-            DictionaryLogic.WordBank = data.WordBankSave;
+            //DictionaryLogic.WordBank = data.WordBankSave;
             ExampleVariableStorage.variables = data.dialogueSave;
         }
     }

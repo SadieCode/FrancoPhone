@@ -10,14 +10,14 @@ using Yarn.Unity;
 public class DictionaryLogic: MonoBehaviour{
 
     public static List<Word> PlayerDictionary = new List<Word>();
-    public static List<Word> WordBank;
+    public static Dictionary WordBank;
     public Transform DictionaryContent;
     public SimpleObjectPool WordBtnPool;
     public GameObject DictionaryPanel;
     public GameObject MovementUI;
     public GameObject btnPrefab;
     public GameObject btnDictionary;
-    public GameObject wordPanel;
+    public Text txtDetails;
 
     private void Start()
     {
@@ -37,24 +37,33 @@ public class DictionaryLogic: MonoBehaviour{
         StringReader stringReader = new StringReader(textAsset.text);
         XmlTextReader reader = new XmlTextReader(stringReader);
 
-        XmlSerializer serial = new XmlSerializer(typeof(List<Word>), new XmlRootAttribute("Words"));
-        WordBank = (List<Word>)serial.Deserialize(reader);
+        XmlSerializer serial = new XmlSerializer(typeof(Dictionary), new XmlRootAttribute("Dictionary"));
+        WordBank = (Dictionary)serial.Deserialize(reader);
         stringReader.Close();
         reader.Close();
 
-        WordBank.Sort((x, y) => x.Fr.CompareTo(y.Fr));
+        WordBank.Words.Sort((x, y) => x.Fr.CompareTo(y.Fr));
 
         //Add starting words to player's dictionary for testing purposes
-        AddWord("Rouge");
-        AddWord("Bleu");
+        AddWord("Avril");
+        AddWord("Bon");
+        AddWord("Être");
     }
 
     [YarnCommand("AddWord")]
     public void AddWord(string fr)
     {
-        Word newWord = WordBank.Find(w => w.Fr == fr);
+        Word newWord = WordBank.Words.Find(w => w.Fr == fr);
+        if(newWord == null) { Debug.Log("Word does not exist in word bank."); return; }
         PlayerDictionary.Add(newWord);
         SortFr();
+    }
+
+    [YarnCommand("AddWordNoSort")]
+    public void AddWordNoSort(string fr)
+    {
+        Word newWord = WordBank.Words.Find(w => w.Fr == fr);
+        PlayerDictionary.Add(newWord);
     }
 
     public void SortFr()
@@ -80,10 +89,7 @@ public class DictionaryLogic: MonoBehaviour{
             newWord.GetComponent<RectTransform>().localScale = btnPrefab.GetComponent<RectTransform>().localScale;
         }
 
-        foreach (Text text in wordPanel.GetComponentsInChildren<Text>())
-        {
-            text.text = null;
-        }
+        txtDetails.text = null;
 
         DictionaryPanel.gameObject.SetActive(true);
     }

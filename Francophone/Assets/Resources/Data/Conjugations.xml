@@ -1,20 +1,48 @@
 <Verbs>
 	<Verb>
 		<Fr>Avoir</Fr>
-		<Je>J'ai</Je>
-		<Tu>Tu as</Tu>
-		<Il>Il/Elle a</Il>
-		<Nous>Nous avons</Nous>
-		<Vous>Vous avez</Vous>
-		<Ils>Ils/Elles ont</Ils>
+		<Conjugations>
+			<Conjugation>
+				<Tense>Présent</Tense>
+				<Je>J'ai</Je>
+				<Tu>Tu as</Tu>
+				<Il>Il/Elle a</Il>
+				<Nous>Nous avons</Nous>
+				<Vous>Vous avez</Vous>
+				<Ils>Ils/Elles ont</Ils>
+			</Conjugation>
+			<Conjugation>
+				<Tense>Passé Composé</Tense>
+				<Je>J'ai eu</Je>
+				<Tu>Tu as eu</Tu>
+				<Il>Il/Elle a eu</Il>
+				<Nous>Nous avons eu</Nous>
+				<Vous>Vous avez eu</Vous>
+				<Ils>Ils/Elles ont eu</Ils>
+			</Conjugation>
+		</Conjugations>
 	</Verb>
 	<Verb>
 		<Fr>Être</Fr>
-		<Je>Je suis</Je>
-		<Tu>Tu es</Tu>
-		<Il>Il/Elle est</Il>
-		<Nous>Nous sommes</Nous>
-		<Vous>Vous êtes</Vous>
-		<Ils>Ils/Elles sont</Ils>
+		<Conjugations>
+			<Conjugation>
+				<Tense>Présent</Tense>
+				<Je>Je suis</Je>
+				<Tu>Tu es</Tu>
+				<Il>Il/Elle est</Il>
+				<Nous>Nous sommes</Nous>
+				<Vous>Vous êtes</Vous>
+				<Ils>Ils/Elles sont</Ils>
+			</Conjugation>
+			<Conjugation>
+				<Tense>Passé Composé</Tense>
+				<Je>J'ai été</Je>
+				<Tu>Tu as été</Tu>
+				<Il>Il/Elle a été</Il>
+				<Nous>Nous avons été</Nous>
+				<Vous>Vous avez été</Vous>
+				<Ils>Ils/Elles ont été</Ils>
+			</Conjugation>
+		</Conjugations>
 	</Verb>
 </Verbs>
