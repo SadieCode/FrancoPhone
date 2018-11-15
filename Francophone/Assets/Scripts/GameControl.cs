@@ -43,6 +43,7 @@ public class GameControl: MonoBehaviour {
         //data.WordBankSave = DictionaryLogic.WordBank;
         //ExampleVariableStorage.Save();
         data.dialogueSave = ExampleVariableStorage.variables;
+        data.dialogueVisits = Yarn.Dialogue.visitedNodeCount;
 
         bf.Serialize(file, data);
         file.Close();
@@ -62,6 +63,7 @@ public class GameControl: MonoBehaviour {
             DictionaryLogic.PlayerDictionary = data.PlayerDictionarySave;
             //DictionaryLogic.WordBank = data.WordBankSave;
             ExampleVariableStorage.variables = data.dialogueSave;
+            Yarn.Dialogue.visitedNodeCount = data.dialogueVisits;
         }
     }
 
@@ -112,4 +114,5 @@ class PlayerData
     public List<Word> PlayerDictionarySave;
     public List<Word> WordBankSave;
     public Dictionary<string, Yarn.Value> dialogueSave;
+    public Dictionary<String, int> dialogueVisits;
 }
