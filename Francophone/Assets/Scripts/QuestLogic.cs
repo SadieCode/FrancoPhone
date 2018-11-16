@@ -60,6 +60,7 @@ public class QuestLogic : MonoBehaviour {
 
     public void OpenQuest()
     {
+        if (QuestPanel.activeSelf) { return; }
         MovementUI.SetActive(false);
         RemoveButtons();
         foreach (Text text in DetailsPanel.GetComponentsInChildren<Text>())

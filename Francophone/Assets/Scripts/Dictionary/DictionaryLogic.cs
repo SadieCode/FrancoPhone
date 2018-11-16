@@ -18,6 +18,7 @@ public class DictionaryLogic: MonoBehaviour{
     public GameObject btnPrefab;
     public GameObject btnDictionary;
     public Text txtDetails;
+    public GameObject UIBar;
 
     private void Start()
     {
@@ -76,10 +77,18 @@ public class DictionaryLogic: MonoBehaviour{
         PlayerDictionary.Sort((x, y) => x.Eng.CompareTo(y.Eng));
     }
 
+    public void OpenMenu()
+    {
+        UIBar.SetActive(true);
+        OpenDictionary();
+    }
+
     public void OpenDictionary()
     {
-        MovementUI.SetActive(false);
+        //don't open the dictionary if it is already open
+        if (DictionaryPanel.activeSelf) { return; }
         RemoveButtons();
+        MovementUI.SetActive(false);
         foreach (Word word in PlayerDictionary)
         {
             GameObject newWord = WordBtnPool.GetObject();
@@ -91,12 +100,12 @@ public class DictionaryLogic: MonoBehaviour{
 
         txtDetails.text = null;
 
-        DictionaryPanel.gameObject.SetActive(true);
+        DictionaryPanel.SetActive(true);
     }
 
     public void CloseDictionary()
     {
-        DictionaryPanel.gameObject.SetActive(false);
+        DictionaryPanel.SetActive(false);
         MovementUI.SetActive(true);
     }
 

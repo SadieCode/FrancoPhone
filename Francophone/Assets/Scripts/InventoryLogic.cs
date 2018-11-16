@@ -46,10 +46,9 @@ public class InventoryLogic : MonoBehaviour {
         ItemList.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
 
         //AddItem("StrangePotion");
-        /* For test purposes
-        AddItem("Word");
-        AddItem("Random");
-        AddItem("Random");
+        //AddItem("Word");
+        //AddItem("Random");
+        //AddItem("Random");
         
         /*  To show dynamic list scrolling */
         /*
@@ -110,6 +109,7 @@ public class InventoryLogic : MonoBehaviour {
 
     public void OpenInventory()
     {
+        if (InventoryPanel.activeSelf) { return; }
         MovementUI.SetActive(false);
         //RemoveButtons();
         //RefreshDisplay();

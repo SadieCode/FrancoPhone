@@ -113,6 +113,7 @@ public class TimeLogic : MonoBehaviour {
 
     public void OpenCalendar()
     {
+        if (calendarPanel.activeSelf) { return; }
         foreach (Image dayBox in calendarDayBoxes)
         {
             dayBox.color = Color.white;
