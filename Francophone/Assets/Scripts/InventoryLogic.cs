@@ -29,7 +29,6 @@ public class InventoryLogic : MonoBehaviour {
         if (ItemList == null)
         {
             InitItemList();
-            AddItem("WordPotion");
         }
     }
 
@@ -45,7 +44,9 @@ public class InventoryLogic : MonoBehaviour {
         reader.Close();
 
         ItemList.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
-        
+
+        AddItem("WordPotion");
+        AddItem("StrangePotion");
         /*  To show dynamic list scrolling *
         //
         for(int i = 0; i <= 100; i++)
@@ -95,7 +96,6 @@ public class InventoryLogic : MonoBehaviour {
             PlayerInventory.RemoveAt(itemIndex);
             SortInv();
         }
-        RefreshDisplay();
     }
 
     public void SortInv()
@@ -107,8 +107,9 @@ public class InventoryLogic : MonoBehaviour {
     {
         if (InventoryPanel.activeSelf) { return; }
         MovementUI.SetActive(false);
-        //RemoveButtons();
-        //RefreshDisplay();
+        RefreshDisplay();
+        RemoveButtons();
+        
         foreach (Item item in PlayerInventory)
         {
             if (item.MarkedForDelete)
@@ -139,17 +140,22 @@ public class InventoryLogic : MonoBehaviour {
 
     private void RemoveButtons()
     {
-        //Infinite loop, need to fix
-        while (InventoryContent.childCount > 0)
+        try {
+            while (InventoryContent.transform.childCount > 0)
+            {
+                GameObject toRemove = InventoryContent.GetChild(0).gameObject;
+                ItemBtnPool.ReturnObject(toRemove);
+            }
+        } catch
         {
-            GameObject toRemove = InventoryContent.GetChild(0).gameObject;
-            ItemBtnPool.ReturnObject(toRemove);
+
         }
+        
     }
 
     public void RefreshDisplay()
     {
-        //RemoveButtons();
+        RemoveButtons();
         foreach (Item item in PlayerInventory)
         {
             if (item.MarkedForDelete)
