@@ -29,6 +29,7 @@ public class InventoryLogic : MonoBehaviour {
         if (ItemList == null)
         {
             InitItemList();
+            AddItem("WordPotion");
         }
     }
 
@@ -44,30 +45,25 @@ public class InventoryLogic : MonoBehaviour {
         reader.Close();
 
         ItemList.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
-
-        //AddItem("StrangePotion");
-        //AddItem("Word");
-        //AddItem("Random");
-        //AddItem("Random");
         
-        /*  To show dynamic list scrolling */
-        /*
+        /*  To show dynamic list scrolling *
+        //
         for(int i = 0; i <= 100; i++)
         {
-            AddItem("Word");
+            AddItem("WordPotion");
         }
-        */
+        /* */
     }
 
     [YarnCommand("AddItem")]
     public void AddItem(string itemLogic)
     {
         //For test purposes
-        /* To show dynamic list scrolling 
-        Item newItem = ItemList.Find(item => item.ItemName == itemName);
+        /* To show dynamic list scrolling *
+        Item newItem = ItemList.Find(item => item.ItemLogic == itemLogic);
         PlayerInventory.Add(newItem);
         SortInv();
-        */
+        /**/
 
         /* This block is the logic for the inventory
             If the item is not in the inventory add entry
@@ -104,7 +100,7 @@ public class InventoryLogic : MonoBehaviour {
 
     public void SortInv()
     {
-        PlayerInventory.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
+        PlayerInventory.Sort((x, y) => x.ItemLogic.CompareTo(y.ItemLogic));
     }
 
     public void OpenInventory()
