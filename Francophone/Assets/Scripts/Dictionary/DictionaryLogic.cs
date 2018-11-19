@@ -85,7 +85,6 @@ public class DictionaryLogic: MonoBehaviour{
 
     public void OpenDictionary()
     {
-        //don't open the dictionary if it is already open
         if (DictionaryPanel.activeSelf) { return; }
         RemoveButtons();
         MovementUI.SetActive(false);
