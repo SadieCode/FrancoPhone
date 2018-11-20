@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DictionaryLabels : MonoBehaviour {
 
     public Button btn;
+    public GameObject btnAudio;
     public Text txt;
     AudioSource audioSource;
 
@@ -18,11 +19,12 @@ public class DictionaryLabels : MonoBehaviour {
         btn.onClick.AddListener(HandlePress);
     }
 
-    public void Setup(Word currentWord)
+    public void Setup(Word currentWord, GameObject btn)
     {
         Word = currentWord;
         txt.text = Word.Fr + " - " + Word.Eng;
         this.gameObject.name = Word.Fr;
+        btnAudio = btn;
     }
 	
     public void HandlePress()
@@ -30,5 +32,6 @@ public class DictionaryLabels : MonoBehaviour {
         audioClip = Resources.Load<AudioClip>("Audio/" + Word.Fr.ToLower());
         audioSource.clip = audioClip;
         Word.Display();
+        btnAudio.SetActive(true);
     }
 }
