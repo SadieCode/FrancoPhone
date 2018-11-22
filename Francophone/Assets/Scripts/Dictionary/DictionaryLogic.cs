@@ -14,7 +14,6 @@ public class DictionaryLogic: MonoBehaviour{
     public Transform DictionaryContent;
     public SimpleObjectPool WordBtnPool;
     public GameObject DictionaryPanel;
-    public GameObject MovementUI;
     public GameObject btnPrefab;
     public GameObject btnDictionary;
     public Text txtDetails;
@@ -89,7 +88,6 @@ public class DictionaryLogic: MonoBehaviour{
         btnAudio.SetActive(false);
         if (DictionaryPanel.activeSelf) { return; }
         RemoveButtons();
-        MovementUI.SetActive(false);
         foreach (Word word in PlayerDictionary)
         {
             GameObject newWord = WordBtnPool.GetObject();
@@ -107,7 +105,6 @@ public class DictionaryLogic: MonoBehaviour{
     public void CloseDictionary()
     {
         DictionaryPanel.SetActive(false);
-        MovementUI.SetActive(true);
     }
 
     private void RemoveButtons()

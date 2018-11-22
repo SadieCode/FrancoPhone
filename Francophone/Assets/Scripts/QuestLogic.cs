@@ -14,7 +14,6 @@ public class QuestLogic : MonoBehaviour {
     public Transform QuestContent;
     public SimpleObjectPool QuestBtnPool;
     public GameObject QuestPanel;
-    public GameObject MovementUI;
     public GameObject btnPrefab;
     public GameObject DetailsPanel;
 
@@ -61,7 +60,6 @@ public class QuestLogic : MonoBehaviour {
     public void OpenQuest()
     {
         if (QuestPanel.activeSelf) { return; }
-        MovementUI.SetActive(false);
         RemoveButtons();
         foreach (Text text in DetailsPanel.GetComponentsInChildren<Text>())
         {
@@ -84,7 +82,6 @@ public class QuestLogic : MonoBehaviour {
     public void CloseQuest()
     {
         QuestPanel.gameObject.SetActive(false);
-        MovementUI.SetActive(true);
     }
 
     private void RemoveButtons()
