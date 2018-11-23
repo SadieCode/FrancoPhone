@@ -16,6 +16,9 @@ public class Warp : MonoBehaviour {
 
     //set the target location in the editor
     public Transform target;
+    public CameraFollow mainCam;
+    public Transform TopLeftBound;
+    public Transform BottomRightBound;
 
     //Turn on panel to hide game screen during warp, this also disables access to movement UI
     public GameObject warpPanel;
@@ -33,10 +36,16 @@ public class Warp : MonoBehaviour {
             collision.gameObject.transform.position = target.position;
             //move the camera too
             Camera.main.transform.position = target.position;
-
+            UpdateBounds();
             //Display screen in 1 second
             Invoke("CloseWarpPanel", 1.0f);
         }
+    }
+
+    public void UpdateBounds()
+    {
+        mainCam.TopLeftBound = TopLeftBound;
+        mainCam.BottomRightBound = BottomRightBound;
     }
 
     private void CloseWarpPanel()
