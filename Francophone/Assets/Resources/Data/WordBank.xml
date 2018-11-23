@@ -1,67 +1,63 @@
 <Dictionary>
 	<Words>
-		<!--<Word>
-			<Fr>Chat</Fr>
-			<Eng>Cat</Eng>
-			<Inf>MPL: Chats</Inf>
-			<Ex>Ma tante a un chat noir.</Ex>
-			<Trans>My aunt has a black cat.</Trans>
-		</Word>
-		<Word>
-			<Fr>Bonjour</Fr>
-			<Eng>Hello</Eng>
-			<Inf></Inf>
-			<Ex>Bonjour. Comment allez-vous?</Ex>
-			<Trans>Hello. How are you?</Trans>
-		</Word>
-	  <Word>
-		<Fr>Merci</Fr>
-		<Eng>Thank you</Eng>
-		<Inf></Inf>
-		<Ex>S'il te plaît et merci.</Ex>
-		<Trans>Please and thank you.</Trans>
-	  </Word>
-	  <Word>
-		<Fr>Bienvenue</Fr>
-		<Eng>Welcome</Eng>
-		<Inf></Inf>
-		<Ex>Vous êtes les bienvenus.</Ex>
-		<Trans>You are welcome.</Trans>
-	  </Word>
-		<Word>
-			<Fr>Horrible</Fr>
-			<Eng>Horrible</Eng>
-			<Inf>F: Horrible@MPL: Horribles@FPL: Horribles</Inf>
-			<Ex>Le temps a été horrible toute la semaine.</Ex>
-			<Trans>The weather was horrible the whole week.</Trans>
-		</Word>
-		<Word>
-			<Fr>Mauvais</Fr>
-			<Eng>Bad</Eng>
-			<Inf>F: Mauvaise@MPL: Mauvais@FPL: Mauvaises</Inf>
-			<Ex>La réception de la télévision était mauvaise.</Ex>
-			<Trans>The television reception was bad.</Trans>
-		</Word>
-		<Word>
-			<Fr>Incroyable</Fr>
-			<Eng>Incredible</Eng>
-			<Inf>F: Incroyable@MPL: Incroyables@FPL: Incroyables</Inf>
-			<Ex>Il lui arrive toujours des aventures incroyables pendant ses voyages.</Ex>
-			<Trans>He always has incredible adventures on his travels.</Trans>
-		</Word>-->
-		<!--<Word>
-			<Fr>Août</Fr>
-			<Eng>August</Eng>
-		</Word>-->
 		<Noun>
 			<Type>Noun</Type>
-			<Fr>Avril</Fr>
-			<Eng>April</Eng>
+			<Fr>Chat</Fr>
+			<Eng>Cat</Eng>
 			<Gender>Masc.</Gender>
-			<Plural>Avrils</Plural>
-			<Ex>Poisson d'avril!</Ex>
-			<Trans>April Fools!</Trans>
+			<Plural>Chats</Plural>
+			<Ex>Ma tante a un chat noir.</Ex>
+			<Trans>My aunt has a black cat.</Trans>
 		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Bonjour</Fr>
+			<Eng>Hello</Eng>
+			<Plural>Bonjours</Plural>
+			<Ex>Bonjour. Comment allez-vous?</Ex>
+			<Trans>Hello. How are you?</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Merci</Fr>
+			<Eng>Thank you</Eng>
+			<Plural>Mercis</Plural>
+			<Ex>S'il te plaît et merci.</Ex>
+			<Trans>Please and thank you.</Trans>
+		</Noun>
+		<Adjective>
+			<Type>Adjective</Type>
+			<Fr>Horrible</Fr>
+			<Eng>Horrible</Eng>
+			<Masc>Horrible</Masc>
+			<Fem>Horrible</Fem>
+			<MascPl>Horribles</MascPl>
+			<FemPl>Horribles</FemPl>
+			<Ex>Le temps a été horrible toute la semaine.</Ex>
+			<Trans>The weather was horrible the whole week.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
+			<Fr>Mauvais</Fr>
+			<Eng>Bad</Eng>
+			<Masc>Mauvais</Masc>
+			<Fem>Mauvaise</Fem>
+			<MascPl>Mauvais</MascPl>
+			<FemPl>Mauvaises</FemPl>
+			<Ex>La réception de la télévision était mauvaise.</Ex>
+			<Trans>The television reception was bad.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
+			<Fr>Incroyable</Fr>
+			<Eng>Incredible</Eng>
+			<Masc>Incroyable</Masc>
+			<Fem>Incroyable</Fem>
+			<MascPl>Incroyables</MascPl>
+			<FemPl>Incroyables</FemPl>
+			<Ex>Il lui arrive toujours des aventures incroyables pendant ses voyages.</Ex>
+			<Trans>He always has incredible adventures on his travels.</Trans>
+		</Adjective>
 		<Adjective>
 			<Type>Adjective</Type>
 			<Fr>Bon</Fr>
@@ -101,152 +97,286 @@
 				</Conjugation>
 			</Conjugations>
 		</Verb>
-		<!--<Word>
-			<Fr>Décembre</Fr>
-			<Eng>December</Eng>
-		</Word>
-		<Word>
-			<Fr>Dimanche</Fr>
-			<Eng>Sunday</Eng>
-		</Word>
-		<Word>
-			<Fr>Février</Fr>
-			<Eng>February</Eng>
-		</Word>
-		<Word>
-			<Fr>Juillet</Fr>
-			<Eng>July</Eng>
-		</Word>
-		<Word>
+		<Noun>
+			<Type>Noun</Type>
 			<Fr>Janvier</Fr>
 			<Eng>January</Eng>
-		</Word>
-		<Word>
-			<Fr>Jeudi</Fr>
-			<Eng>Thursday</Eng>
-		</Word>
-		<Word>
-			<Fr>Lundi</Fr>
-			<Eng>Monday</Eng>
-		</Word>
-		<Word>
+			<Gender>Masc.</Gender>
+			<Plural>Janviers</Plural>
+			<Ex>En janvier, nous prenons tous de bonnes résolutions.</Ex>
+			<Trans>We all make good resolutions in January.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Février</Fr>
+			<Eng>February</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Févriers</Plural>
+			<Ex>Il est née en février.</Ex>
+			<Trans>He was born in February.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Mars</Fr>
+			<Eng>March</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Mars</Plural>
+			<Ex>La Saint Patrick est en mars.</Ex>
+			<Trans>St Patrick's Day is in March.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Avril</Fr>
+			<Eng>April</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Avrils</Plural>
+			<Ex>Poisson d'avril!</Ex>
+			<Trans>April Fools!</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
 			<Fr>Mai</Fr>
 			<Eng>May</Eng>
-		</Word>
-		<Word>
+			<Gender>Masc.</Gender>
+			<Plural>Mais</Plural>
+			<Ex>Mon cousin est né en mai.</Ex>
+			<Trans>My cousin was born in May.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Juin</Fr>
+			<Eng>June</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Juins</Plural>
+			<Ex>En juin commence l'été dans l'hémisphère nord.</Ex>
+			<Trans>In the northern hemisphere, summer starts in June.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Juillet</Fr>
+			<Eng>July</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Juillets</Plural>
+			<Ex>Les vacances d'été commencent en juillet.</Ex>
+			<Trans>Summer vacation starts in July.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Août</Fr>
+			<Eng>August</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Aoûts</Plural>
+			<Ex>Elle est née en août.</Ex>
+			<Trans>She was born in August.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Septembre</Fr>
+			<Eng>September</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Septembres</Plural>
+			<Ex>En septembre, je vais partir à Londres.</Ex>
+			<Trans>In September, I am going to London.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Octobre</Fr>
+			<Eng>October</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Octobres</Plural>
+			<Ex>Je suis née au mois d'octobre.</Ex>
+			<Trans>I was born in the month of October.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Novembre</Fr>
+			<Eng>November</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Novembres</Plural>
+			<Ex>En novembre, je pars souvent en Angleterre.</Ex>
+			<Trans>In November, I often go to England.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Décembre</Fr>
+			<Eng>December</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Décembres</Plural>
+			<Ex>Nous installons le sapin de Noël en décembre.</Ex>
+			<Trans>We put the Christmas tree up in December.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Dimanche</Fr>
+			<Eng>Sunday</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Dimanches</Plural>
+			<Ex>En général, nous allons à la messe le dimanche.</Ex>
+			<Trans>We usually go to church on Sunday.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Lundi</Fr>
+			<Eng>Monday</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Lundis</Plural>
+			<Ex>Je le ferai lundi.</Ex>
+			<Trans>I'll do it on Monday.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
 			<Fr>Mardi</Fr>
 			<Eng>Tuesday</Eng>
-		</Word>
-		<Word>
+			<Gender>Masc.</Gender>
+			<Plural>Mardis</Plural>
+			<Ex>Mardi vient après lundi.</Ex>
+			<Trans>Tuesday comes after Monday.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
 			<Fr>Mercredi</Fr>
 			<Eng>Wednesday</Eng>
-		</Word>
-		<Word>
+			<Gender>Masc.</Gender>
+			<Plural>Mercredis</Plural>
+			<Ex>Le mercredi soir, Camille va à la piscine.</Ex>
+			<Trans>Camille goes swimming on Wednesday evenings.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Jeudi</Fr>
+			<Eng>Thursday</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Jeudis</Plural>
+			<Ex>Avant les écoliers n'avaient pas classe le jeudi.</Ex>
+			<Trans>Schoolchildren used to not have classes on Thursdays.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Vendredi</Fr>
+			<Eng>Friday</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Vendredis</Plural>
+			<Ex>Nous sommes allés au théâtre vendredi.</Ex>
+			<Trans>We went to the theatre on Friday.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
+			<Fr>Samedi</Fr>
+			<Eng>Saturday</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Samedis</Plural>
+			<Ex>Saturday is considered the last day of the week in some countries.</Ex>
+			<Trans>Le samedi est considéré comme le dernier jour de la semaine dans certains pays.</Trans>
+		</Noun>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Rouge</Fr>
 			<Eng>Red</Eng>
-			<Inf>F: Rouge@MPL: Rouges@FPL: Rouges</Inf>
-			<Ex>La voiture &lt;b&gt;rouge&lt;/b&gt; est passée rapidement.</Ex>
-			<Trans>The &lt;b&gt;red&lt;/b&gt; car passed quickly.</Trans>
-		</Word>
-		<Word>
+			<Masc>Rouge</Masc>
+			<Fem>Rouge</Fem>
+			<MascPl>Rouges</MascPl>
+			<FemPl>Rouges</FemPl>
+			<Ex>La voiture rouge est passée rapidement.</Ex>
+			<Trans>The red car passed quickly.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Jaune</Fr>
 			<Eng>Yellow</Eng>
-			<Inf>F: Jaune@MPL: Jaunes@FPL: Jaunes</Inf>
-			<Ex>Les bananes sont &lt;b&gt;jaunes&lt;/b&gt;.</Ex>
-			<Trans>Bananas are &lt;b&gt;yellow&lt;/b&gt;.</Trans>
-		</Word>
-		<Word>
+			<Masc>Jaune</Masc>
+			<Fem>Jaune</Fem>
+			<MascPl>Jaunes</MascPl>
+			<FemPl>Jaunes</FemPl>
+			<Ex>Les bananes sont jaunes.</Ex>
+			<Trans>Bananas are yellow.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Bleu</Fr>
 			<Eng>Blue</Eng>
-			<Inf>F: Bleue@MPL: Bleus@FPL: Bleues</Inf>
-			<Ex>Ma voiture n'est pas rouge mais &lt;b&gt;bleue&lt;/b&gt;.</Ex>
-			<Trans>My car isn't red, it's &lt;b&gt;blue&lt;/b&gt;.</Trans>
-		</Word>
-		<Word>
-			<Fr>Je</Fr>
-			<Eng>I</Eng>
-			<Inf></Inf>
-			<Ex>&lt;b&gt;Je&lt;/b&gt; veux le chocolat.</Ex>
-			<Trans>&lt;b&gt;I&lt;/b&gt; want chocolate.</Trans>
-		</Word>
-		<Word>
-			<Fr>Être</Fr>
-			<Eng>To be</Eng>
-			<Inf></Inf>
-			<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
-			<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
-		</Word>
-		<Word>
+			<Masc>Bleu</Masc>
+			<Fem>Bleue</Fem>
+			<MascPl>Bleus</MascPl>
+			<FemPl>Bleues</FemPl>
+			<Ex>Ma voiture n'est pas rouge mais bleue.</Ex>
+			<Trans>My car isn't red, it's blue.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Orange</Fr>
 			<Eng>Orange</Eng>
-			<Inf></Inf>
-			<Ex>Ma mère &lt;b&gt;est&lt;/b&gt; petite.</Ex>
-			<Trans>My mother &lt;b&gt;is&lt;/b&gt; short.</Trans>
-		</Word>
-		<Word>
+			<Masc>Orange</Masc>
+			<Fem>Orange</Fem>
+			<MascPl>Orange</MascPl>
+			<FemPl>Orange</FemPl>
+			<Ex>Mon père porte des chaussettes orange.</Ex>
+			<Trans>My father wears orange socks.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Vert</Fr>
 			<Eng>Green</Eng>
-			<AudioPath>Audio/vert</AudioPath>
-		</Word>
-		<Word>
+			<Masc>Vert</Masc>
+			<Fem>Verte</Fem>
+			<MascPl>Verts</MascPl>
+			<FemPl>Vertes</FemPl>
+			<Ex>Au printemps, la nature est toute verte.</Ex>
+			<Trans>The countryside is very green in spring.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Violet</Fr>
 			<Eng>Purple</Eng>
-			<AudioPath>Audio/violet</AudioPath>
-		</Word>
-		<Word>
+			<Masc>Violet</Masc>
+			<Fem>Violette</Fem>
+			<MascPl>Violets</MascPl>
+			<FemPl>Violette</FemPl>
+			<Ex>Elle portait une jupe violette et des collants jaunes!</Ex>
+			<Trans>She was wearing a purple skirt and yellow tights!</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Noir</Fr>
 			<Eng>Black</Eng>
-			<AudioPath>Audio/noir</AudioPath>
-		</Word>
-		<Word>
+			<Masc>Noir</Masc>
+			<Fem>Noire</Fem>
+			<MascPl>Noirs</MascPl>
+			<FemPl>Noires</FemPl>
+			<Ex>Les corneilles sont noires.</Ex>
+			<Trans>Crows are black.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Blanc</Fr>
 			<Eng>White</Eng>
-			<AudioPath>Audio/blanc</AudioPath>
-		</Word>
-		<Word>
+			<Masc>Blanc</Masc>
+			<Fem>Blanche</Fem>
+			<MascPl>Blancs</MascPl>
+			<FemPl>Blanches</FemPl>
+			<Ex>Que penses-tu de ce chemisier blanc ?</Ex>
+			<Trans>What do you think of this white blouse?</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Gris</Fr>
 			<Eng>Grey</Eng>
-			<AudioPath>Audio/gris</AudioPath>
-		</Word>
-		<Word>
+			<Masc>Gris</Masc>
+			<Fem>Grise</Fem>
+			<MascPl>Gris</MascPl>
+			<FemPl>Grises</FemPl>
+			<Ex>Cette petite souris est grise.</Ex>
+			<Trans>That little mouse is grey.</Trans>
+		</Adjective>
+		<Adjective>
+			<Type>Adjective</Type>
 			<Fr>Brun</Fr>
 			<Eng>Brown</Eng>
-			<AudioPath>Audio/brun</AudioPath>
-		</Word>
-		<Word>
-			<Fr>Tu</Fr>
-			<Eng>You</Eng>
-			<AudioPath>Audio/tu</AudioPath>
-		</Word>
-		<Word>
-			<Fr>Il</Fr>
-			<Eng>He</Eng>
-			<AudioPath>Audio/il</AudioPath>
-		</Word>
-		<Word>
-			<Fr>Elle</Fr>
-			<Eng>She</Eng>
-			<AudioPath>Audio/elle</AudioPath>
-		</Word>
-		<Word>
-			<Fr>Nous</Fr>
-			<Eng>We</Eng>
-			<AudioPath>Audio/nous</AudioPath>
-		</Word>
-		<Word>
-			<Fr>Vous</Fr>
-			<Eng>You (Plural)</Eng>
-			<AudioPath>Audio/vous</AudioPath>
-		</Word>
-		<Word>
-			<Fr>Ils</Fr>
-			<Eng>They (Masculine)</Eng>
-			<AudioPath>Audio/ils</AudioPath>
-		</Word>
-		<Word>
-			<Fr>Elles</Fr>
-			<Eng>They (Feminine)</Eng>
-			<AudioPath>Audio/elles</AudioPath>
-		</Word>-->
+			<Masc>Brun</Masc>
+			<Fem>Brune</Fem>
+			<MascPl>Bruns</MascPl>
+			<FemPl>Brunes</FemPl>
+			<Ex>Ils portaient des chemises brunes.</Ex>
+			<Trans>They wore brown shirts.</Trans>
+		</Adjective>
 	</Words>
 </Dictionary>

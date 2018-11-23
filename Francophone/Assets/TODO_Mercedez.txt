@@ -1,17 +1,10 @@
 To do:
--hide audio button on dictionary for first open
--Test camera scaling
+-Test camera scaling (might be good now?)
 -FIND A GOOD FONT
--add all audio clips
--Improve dictionary efficiency
-	-Apply fix to similar scripts
--camera and player bounds
-	-probably just going to get rid of them altogether?
--consistent sprites
-	-working on this
--magic system
+-magic system (base done)
 -relationship system
 -UI for inventory/calendar
+-Fix code for code review
 
 Would like to:
 
@@ -24,12 +17,3 @@ Would like to:
 Waiting to:
 -fix collisions
 	-Can't be done until all maps are completed since the collisions reset when re-importing updated maps
-
-Finished:
--fix audio for dictionary
--Camera scaling
--fixed jerky animation
-	-due mostly to startup processes of scripts which would not occur in actual 
-	 gameplay since the startups would run while player loads in from main menu
-	-moved the physics parts of player movement to a fixed update loop which seems to have helped
--Added objective class for quests (quest steps)
