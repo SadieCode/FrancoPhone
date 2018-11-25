@@ -16,7 +16,6 @@ public class InventoryLogic : MonoBehaviour {
     public Transform InventoryContent;
     public SimpleObjectPool ItemBtnPool;
     public GameObject InventoryPanel;
-    public GameObject MovementUI;
     public GameObject btnPrefab;
     public GameObject btnInventory;
 
@@ -106,7 +105,6 @@ public class InventoryLogic : MonoBehaviour {
     public void OpenInventory()
     {
         if (InventoryPanel.activeSelf) { return; }
-        MovementUI.SetActive(false);
         RefreshDisplay();
         RemoveButtons();
         
@@ -128,7 +126,6 @@ public class InventoryLogic : MonoBehaviour {
 
     public void CloseInventory()
     {
-        MovementUI.SetActive(true);
         InventoryPanel.gameObject.SetActive(false);
     }
 

@@ -6,39 +6,64 @@ using UnityEngine.UI;
 public class SpellCaster : MonoBehaviour{
     
     //Example sentences for testing
-    public InputField inputField;
-    string sentence = "Je ne veux pas";
-    string[] answers = { "I don't want to", "I do not want to" };
-    string answer;
-    string attempt;
-    float powerLevel = 0;
+    public PlayerCombat player;
+    string[] QuestionPool = {"Mardi vient après lundi", "Mon anniversaire est le 17 mars", "Noël tombe un vendredi",
+                            "Je suis née au mois d'octobre","Mon père porte des chaussettes orange","Les corneilles sont noires",
+                            "Les bananes sont jaunes","Ma voiture est bleue"};
+    string Question;
+    string[][] AnswerPool =
+    {
+        new string[] {"Tuesday comes after Monday"},
+        new string[] {"My birthday is March 17"},
+        new string[] {"Christmas falls on a Friday"},
+        new string[] {"I was born in the month of October"},
+        new string[] {"My father wears orange socks"},
+        new string[] {"Crows are black"},
+        new string[] {"Bananas are yellow"},
+        new string[] {"My car is blue"}
+    };
+    string[] Answers;
+    string ClosestAnswer;
+    string playerAnswer;
+    public static float powerLevel = 0;
 
-    public GameObject DisplayPanel;
-    public Text questionText;
-    public Text correctText;
-    public Text powerText;
+    public InputField InputField;
+    public GameObject SpellPanel;
+    public Text TxtQuestion;
+    public Text TxtPlayerAnswer;
+    public Text TxtCorrectAnswer;
+    public Text TxtPower;
 
     void Start()
     {
-        inputField.onEndEdit.AddListener(CheckAnswer);
+        InputField.onEndEdit.AddListener(CheckAnswer);
     }
 
-    public void Attack()
+    public void DisplayQuestion()
     {
-        DisplayPanel.SetActive(true);
-        questionText.text = sentence;
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
+        int index = UnityEngine.Random.Range(0, QuestionPool.Length);
+        Question = QuestionPool[index];
+        Answers = AnswerPool[index];
+
+
+        SpellPanel.SetActive(true);
+        TxtQuestion.text = Question;
+        TxtQuestion.gameObject.SetActive(true);
+        InputField.text = "";
+        InputField.gameObject.SetActive(true);
     }
 
     void CheckAnswer(string s)
     {
         powerLevel = 0;
-        attempt = s;
+        playerAnswer = s;
         List<string> attemptWords = new List<string>();
         string attemptWord = null;
         int i = 1;
-        foreach (char c in attempt)
+        foreach (char c in playerAnswer)
         {
-            if (i == attempt.Length)
+            if (i == playerAnswer.Length)
             {
                 attemptWord = attemptWord + c;
                 attemptWords.Add(attemptWord);
@@ -56,12 +81,12 @@ public class SpellCaster : MonoBehaviour{
             i++;
         }
 
-        for (int k = 0; k < answers.Length; k++)
+        for (int k = 0; k < Answers.Length; k++)
         {
             List<string> words = new List<string>();
             string word = null;
             int j = 1;
-            string correctSentence = answers[k];
+            string correctSentence = Answers[k];
             foreach (char c in correctSentence)
             {
                 if (j == correctSentence.Length)
@@ -101,7 +126,7 @@ public class SpellCaster : MonoBehaviour{
             if (wPowerLevel != 0) { wPowerLevel = (wPowerLevel / correctArray.Length) * 100; }
             if(wPowerLevel >= powerLevel) {
                 powerLevel = wPowerLevel;
-                answer = answers[k];
+                ClosestAnswer = Answers[k];
             }
         }
         DisplayResult();
@@ -109,9 +134,23 @@ public class SpellCaster : MonoBehaviour{
 
     void DisplayResult()
     {
-        correctText.text = answer;
-        correctText.gameObject.SetActive(true);
-        powerText.text = "Power: " + powerLevel;
-        powerText.gameObject.SetActive(true);
+        TxtQuestion.gameObject.SetActive(false);
+        InputField.gameObject.SetActive(false);
+        TxtPlayerAnswer.gameObject.SetActive(true);
+        TxtPlayerAnswer.text = "Your answer: " + playerAnswer;
+        TxtCorrectAnswer.text = "Correct answer: " + ClosestAnswer;
+        TxtCorrectAnswer.gameObject.SetActive(true);
+        TxtPower.text = "Power: " + powerLevel + "%";
+        TxtPower.gameObject.SetActive(true);
+        Invoke("SpellComplete", 2.0f);
+    }
+
+    void SpellComplete()
+    {
+        TxtPlayerAnswer.gameObject.SetActive(false);
+        TxtCorrectAnswer.gameObject.SetActive(false);
+        TxtPower.gameObject.SetActive(false);
+        SpellPanel.SetActive(false);
+        CombatController.attackReady = true;
     }
 }

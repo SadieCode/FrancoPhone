@@ -35,17 +35,10 @@ public class Warp : MonoBehaviour {
             //if the collision is the player, move them to target
             collision.gameObject.transform.position = target.position;
             //move the camera too
-            Camera.main.transform.position = target.position;
-            UpdateBounds();
+            mainCam.WarpCamera(TopLeftBound,BottomRightBound);
             //Display screen in 1 second
             Invoke("CloseWarpPanel", 1.0f);
         }
-    }
-
-    public void UpdateBounds()
-    {
-        mainCam.TopLeftBound = TopLeftBound;
-        mainCam.BottomRightBound = BottomRightBound;
     }
 
     private void CloseWarpPanel()

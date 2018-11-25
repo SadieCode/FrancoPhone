@@ -9,7 +9,8 @@ public class PlayerLogic : MonoBehaviour {
     Rigidbody2D rbody;
     Animator anim;
     private float speed = 1.5f;
-
+    public Transform Spawn;
+    public GameObject canvas;
     public static int clariceFRN = 0;
     public static int amelieFRN = 0;
     public static int jeanFRN = 0;
@@ -69,5 +70,14 @@ public class PlayerLogic : MonoBehaviour {
                 Debug.Log("Error: name not found");
                 break;
         }
+    }
+
+    public void Respawn()
+    {
+        TimeLogic.day++;
+        TimeLogic.hour = 8;
+        transform.position = Spawn.position;
+        Camera.main.GetComponent<CameraFollow>().BottomRightBound = null;
+        Camera.main.GetComponent<CameraFollow>().TopLeftBound = null;
     }
 }
