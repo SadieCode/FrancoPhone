@@ -13,7 +13,6 @@ public class MemoryGameController : MonoBehaviour {
 
     public GameObject GamePanel;
     public GameObject GamePanelText;
-    public GameObject StopInputPanel;
 
     private bool firstSelected, secondSelected;
     private int firstSelectionIndex, secondSelectionIndex;
@@ -31,7 +30,6 @@ public class MemoryGameController : MonoBehaviour {
         AddGameOptions();
         Shuffle(gameOptions);
         numOfPairs = gameOptions.Count / 2;
-        StopInputPanel.SetActive(false);
     }
 
     void GetButtons()
@@ -86,14 +84,13 @@ public class MemoryGameController : MonoBehaviour {
         if(firstSelected && secondSelected)
         {
             StartCoroutine(CheckIfTheSelectionsMatch());
-            
         }
+     
     }
 
     IEnumerator CheckIfTheSelectionsMatch()
-    {
-        StopInputPanel.SetActive(true);
-
+    {    
+        //yield return new WaitForSeconds(1f);
         if(firstSelectedCard == secondSelectedCard + "1" || secondSelectedCard == firstSelectedCard + "1")
         {
             yield return new WaitForSeconds(.5f);
@@ -103,12 +100,8 @@ public class MemoryGameController : MonoBehaviour {
             btns[firstSelectionIndex].image.color = new Color(0, 0, 0, 0);
             btns[secondSelectionIndex].image.color = new Color(0, 0, 0, 0);
 
-            if(btns[firstSelectionIndex].image.color.a == 0 && btns[secondSelectionIndex].image.color.a == 0)
-            {
-                numOfMatches++;
-                CheckIfTheGameIsFinished();
-            }
-            
+            numOfMatches++;
+            CheckIfTheGameIsFinished();
         }
         else
         {
@@ -117,8 +110,8 @@ public class MemoryGameController : MonoBehaviour {
             btns[secondSelectionIndex].image.sprite = bgImage;
         }
 
+        yield return new WaitForSeconds(.5f);
         firstSelected = secondSelected = false;
-        StopInputPanel.SetActive(false);
     }
 
     void CheckIfTheGameIsFinished()
@@ -136,13 +129,6 @@ public class MemoryGameController : MonoBehaviour {
 
         GamePanel.SetActive(false);
         GamePanelText.SetActive(false);
-    }
-
-    private IEnumerator PauseGame()
-    {
-        Time.timeScale = 0.0f;
-        yield return new WaitForSeconds(2);
-        Time.timeScale = 1;
     }
 
     void Shuffle(List<Sprite> list)
