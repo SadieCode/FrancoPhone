@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class InventoryLabels : MonoBehaviour {
 
     public Button btn;
@@ -31,12 +32,15 @@ public class InventoryLabels : MonoBehaviour {
 
     public void HandlePress()
     {
-        Item.GetType().GetMethod(Item.ItemLogic).Invoke(Item, null);
-        Item.Quantity--;
-        txtQuantity.text = Item.Quantity + "";
+        if(Item.Quantity > 0) { 
+            Item.GetType().GetMethod(Item.ItemLogic).Invoke(Item, null);
+            Item.Quantity--;
+            txtQuantity.text = Item.Quantity + "";
+        }
         if (Item.Quantity <= 0)
         {
             Item.MarkedForDelete = true;
+            
         }
     }
 

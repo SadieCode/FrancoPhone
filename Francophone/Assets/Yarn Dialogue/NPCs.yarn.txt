@@ -1,7 +1,7 @@
 title: Clarice
 tags: 
 colorID: 3
-position: -183,11
+position: -607,-111
 ---
 <<if $lesson1 is true and $clariceSunday is true>>
     Clarice: See you dimanche!
@@ -27,7 +27,7 @@ Clarice: Do you want to hang out on Sunday?
 title: Margot
 tags: 
 colorID: 1
-position: 115,-17
+position: -401,-325
 ---
 <<if visited("Margot")>>
 Margot: *Yawn*
@@ -42,21 +42,21 @@ Margot: Moi aussi.
 title: Amélie
 tags: 
 colorID: 6
-position: 376,-255
+position: -606,104
 ---
 Amélie: Brrrr... The classroom is always too cold!
 ===
 title: Claude
 tags: 
 colorID: 2
-position: 375,-6
+position: -390,102
 ---
 Claude: Salut...
 ===
 title: Jean
 tags: 
 colorID: 4
-position: 53,234
+position: -396,-109
 ---
 <<if $lesson1 is true and $jeanSunday is true>>
     Jean: See you dimanche!
@@ -80,14 +80,14 @@ Jean: Do you want to hang out on Sunday?
 title: Franc
 tags: 
 colorID: 0
-position: 54,-248
+position: -608,-319
 ---
 Franc: Please take your seat.
 ===
 title: Lesson1
 tags: 
 colorID: 5
-position: -301,-215
+position: 52,-334
 ---
 Franc: Today we are going to learn a very important type of magic.
 Franc: Time magic.
@@ -113,7 +113,7 @@ You instantly gained all knowledge of days of the week and months.
 title: ClariceStudy
 tags: 
 colorID: 0
-position: -598,-229
+position: 51,-117
 ---
 <<if visited("ClariceStudy")>>
     Clarice: Thanks for studying with me!
@@ -127,7 +127,7 @@ position: -598,-229
 title: JeanStudy
 tags: 
 colorID: 0
-position: -553,-8
+position: 45,107
 ---
 <<if visited("JeanStudy")>>
     Jean: Thanks for studying with me!
@@ -137,4 +137,116 @@ position: -553,-8
     Jean: I was hoping we could study together today.
     <<StartStudy LessonMgr>>
 <<endif>>
+===
+title: Richard
+tags: NPC
+colorID: 0
+position: -606,320
+---
+<<if $acceptedHittingTheBooks is false>>
+    Richard: Hey, you there. Come here
+    -> What is it?
+        Richard: I need your help finishing my Capstone demo.
+        Richard: I'm out of time and don't know the spell I need.
+        -> Sure, I can help.
+            Richard: That's great. Go ask the Librarian for help.
+            <<set $acceptedHittingTheBooks = true>>
+            [[Hitting the books]]
+        -> Umm... No?
+        [[Leave]]
+    -> I don't have time for this.
+    [[Leave]]
+<<elseif $FoundConvertingWordsToPower = true>>
+    Player: I found the spellbook you wanted
+    <<RemoveItemAlt GENERAL ConvertingWordsToPower>>
+    Richard: Thank you, now let me see here....
+    Richard: Ah I got it. "Terminer mon travail pour moi"
+    -> What does that mean?
+        Richard: It means "Finish my work for me"
+    -> Now what do I get out of this?
+        Richard: Yes yes, hold on. Here have this potion.
+    <<AddItem GENERAL Dusk>>
+    Time Potion: Dusk Added.
+    [[Hitting the books]]
+<<endif>>
+
+===
+title: Leave
+tags: 
+colorID: 0
+position: 463,-169
+---
+You walk away.
+===
+title: Librarian
+tags: NPC
+colorID: 0
+position: -383,325
+---
+<<if $questHittingTheBooksActive is true>>
+    Librarian: What can I help you with?
+    Player: I need a book to do research on Richard's project.
+    Librarian: Why? .. Oh nevermind. 
+    Librarian: You could use Converting Words to Power.
+    Librarian: It's on the third shelf in the middle.
+    -> Thanks
+    -> Mecri?
+        Player: What did I just say?
+        Librarian: You said "Thank you" in French. And Bienvenue!
+        <<AddWord GENERAL Merci>>
+        <<AddWord GENERAL Bienvenue>>
+        Words learnt : Merci and Bienvenue
+    <<NextObjective GENERAL 10>>
+<<else>>
+    Librarian: Hello
+    Librarian: Make sure to study lots!
+<<endif>>
+===
+title: Hitting the books
+tags: Quest
+colorID: 0
+position: 47,322
+---
+<<if visited("Hitting the books") is false>>
+    <<AddQuest GENERAL 10>>
+    <<set $questHittingTheBooksActive = true>>
+    QUEST ADDED : Hitting the books
+<<else>>
+    <<set $questHittingTheBooksActive = false>>
+    QUEST COMPLETED : Hitting the books
+<<endif>>
+===
+title: BookConvertingWordsToPower
+tags: QuestItem Quest
+colorID: 0
+position: 509,126
+---
+<<if $FoundConvertWordsToPower is false>>
+    Found the book called "Convert Words to Power - By Prof. J.D.G.M. The third"
+    ->Take the book.
+        You pick up the book.
+        <<AddItemAlt GENERAL ConvertingWordsToPower>>
+        <<NextObjective GENERAL 10>>
+        <<set $FoundConvertingWordsToPower = true>>
+    ->Leave it.
+        [[Leave]]
+<<elseif $FoundConvertingWordsToPower is true>>
+    You already have this book.
+<<endif>>
+
+===
+title: Market
+tags: NPC Shop
+colorID: 0
+position: 385,-382
+---
+Merchant: Hello, Would you like to try our time potions?
+->Yes please!
+    Merchant: Here you go, one of each.
+    <<AddItem GENERAL Noon>>
+    <<AddItem GENERAL Midnight>>
+    <<AddItem GENERAL Dawn>>
+    <<AddItem GENERAL Dusk>>
+->No thanks.
+    [[Leave]]
 ===

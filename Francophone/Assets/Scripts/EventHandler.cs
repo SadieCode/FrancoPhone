@@ -128,17 +128,21 @@ public class EventHandler : MonoBehaviour {
         }
 
     }
+
+    //Must edit getChild(i) to select the correct NPCs based on unity index
     void MarketPlace_TimeLogic()
     {
         //Switch between part time NPCs based on the day
         if (TimeLogic.weekDay % 2 == 1)
         {
             //Get children with transform and sets their game object to active or not
+            //Must edit getChild(i) to select the correct NPCs
             NPCs_World.transform.GetChild(0).gameObject.SetActive(true);
             NPCs_World.transform.GetChild(1).gameObject.SetActive(false);
         }
         else
         {
+            //Must edit getChild(i) to select the correct NPCs
             NPCs_World.transform.GetChild(0).gameObject.SetActive(false);
             NPCs_World.transform.GetChild(1).gameObject.SetActive(true);
         }

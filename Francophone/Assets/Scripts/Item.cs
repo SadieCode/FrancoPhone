@@ -16,32 +16,22 @@ public class Item {
 
     public int ImageNumber { get; set; }
 
+    public int MetaData { get; set; }
+
     public bool MarkedForDelete { get; set; }
     //public GameObject ItemLogic;
     public Item()
     {
     }
     
-    public void WordPotion()
+    public void TimePotion()
     {
-        dictionaryLogic = GameObject.Find("GENERAL").GetComponent<DictionaryLogic>();
-        dictionaryLogic.AddWord("Rouge");
+        TimeLogic.hour = MetaData;
     }
 
     public void ConvertingWordsToPower()
     {
         //Quest item, gets removed by storyline
         Quantity++;
-    }
-
-    public void StrangePotion()
-    {
-        GameObject player = GameObject.Find("Player");
-        if( player != null )
-        {
-            Vector2 teleportLocation = new Vector2(-4, 2);
-            Transform target = player.transform;
-            target.position = Vector2.MoveTowards(target.position, teleportLocation, 10000);
-        }
     }
 }

@@ -28,6 +28,9 @@ public class InventoryLogic : MonoBehaviour {
         if (ItemList == null)
         {
             InitItemList();
+
+            AddItem("Noon");
+            AddItem("Midnight");
         }
     }
 
@@ -44,49 +47,73 @@ public class InventoryLogic : MonoBehaviour {
 
         ItemList.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
 
-        AddItem("WordPotion");
-        AddItem("StrangePotion");
-        /*  To show dynamic list scrolling *
-        //
-        for(int i = 0; i <= 100; i++)
-        {
-            AddItem("WordPotion");
-        }
-        /* */
     }
 
-    [YarnCommand("AddItem")]
-    public void AddItem(string itemLogic)
+    [YarnCommand("AddItemAlt")]
+    public void AddItemAlt(string itemLogic)
     {
-        //For test purposes
-        /* To show dynamic list scrolling *
-        Item newItem = ItemList.Find(item => item.ItemLogic == itemLogic);
-        PlayerInventory.Add(newItem);
-        SortInv();
-        /**/
-
-        /* This block is the logic for the inventory
-            If the item is not in the inventory add entry
-            Else increase the amount of the item
-        */
-        /* */
         bool existingItem = PlayerInventory.Any(item => item.ItemLogic == itemLogic);
         if (existingItem)
         {
             int itemIndex = PlayerInventory.FindIndex(item => item.ItemLogic == itemLogic);
             PlayerInventory[itemIndex].Quantity++;
         }
-        else
+        else if (ItemList.Any(item => item.ItemLogic == itemLogic))
         {
             Item newItem = ItemList.Find(item => item.ItemLogic == itemLogic);
             PlayerInventory.Add(newItem);
             SortInv();
         }
+        else
+        {
+            //Item was not found in itemList.xml
+            Console.WriteLine("Item " + itemLogic + " was not found.");
+        }
+
+    }
+
+    [YarnCommand("AddItem")]
+    public void AddItem(string itemName)
+    {
+        /* This block is the logic for the inventory
+            If the item is not in the inventory add entry
+            Else increase the amount of the item
+
+        */
+        /* */
+        bool existingItem = PlayerInventory.Any(item => item.ItemName == itemName);
+        if (existingItem)
+        {
+            int itemIndex = PlayerInventory.FindIndex(item => item.ItemName == itemName);
+            PlayerInventory[itemIndex].Quantity++;
+        }
+        else if(ItemList.Any(item => item.ItemName == itemName))
+        {
+            Item newItem = ItemList.Find(item => item.ItemName == itemName);
+            PlayerInventory.Add(newItem);
+            SortInv();
+        } else
+        {
+            //Item was not found in itemList.xml
+            Console.WriteLine("Item " + itemName + " was not found.");
+        }
         /**/
     }
     
     [YarnCommand("RemoveItem")]
-    public void RemoveItem(string itemLogic)
+    public void RemoveItem(string itemName)
+    {
+        bool existingItem = PlayerInventory.Any(item => item.ItemName == itemName);
+        if (existingItem)
+        {
+            int itemIndex = PlayerInventory.FindIndex(item => item.ItemName == itemName);
+            PlayerInventory.RemoveAt(itemIndex);
+            SortInv();
+        }
+    }
+
+    [YarnCommand("RemoveItemAlt")]
+    public void RemoveItemAlt(string itemLogic)
     {
         bool existingItem = PlayerInventory.Any(item => item.ItemLogic == itemLogic);
         if (existingItem)
@@ -97,9 +124,10 @@ public class InventoryLogic : MonoBehaviour {
         }
     }
 
+
     public void SortInv()
     {
-        PlayerInventory.Sort((x, y) => x.ItemLogic.CompareTo(y.ItemLogic));
+        PlayerInventory.Sort((x, y) => x.ItemName.CompareTo(y.ItemName));
     }
 
     public void OpenInventory()
@@ -107,13 +135,13 @@ public class InventoryLogic : MonoBehaviour {
         if (InventoryPanel.activeSelf) { return; }
         RefreshDisplay();
         RemoveButtons();
-        
-        foreach (Item item in PlayerInventory)
+        Console.WriteLine("Here");
+        for(int i = 0; i < PlayerInventory.Count; i++) 
         {
+            Item item = PlayerInventory[i];
             if (item.MarkedForDelete)
             {
-                RemoveItem(item.ItemName);
-                continue;
+                RemoveItem(PlayerInventory[i].ItemName);
             }
             GameObject newItem = ItemBtnPool.GetObject();
             newItem.transform.SetParent(InventoryContent);
@@ -153,8 +181,9 @@ public class InventoryLogic : MonoBehaviour {
     public void RefreshDisplay()
     {
         RemoveButtons();
-        foreach (Item item in PlayerInventory)
+        for (int i = 0; i < PlayerInventory.Count(); i++)
         {
+            Item item = PlayerInventory[i];
             if (item.MarkedForDelete)
             {
                 RemoveItem(item.ItemName);

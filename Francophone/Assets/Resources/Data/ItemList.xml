@@ -1,8 +1,33 @@
 ﻿<Items>
   <Item>
-    <ItemLogic>WordPotion</ItemLogic>
-    <ItemName>Word Potion</ItemName>
+    <ItemLogic>TimePotion</ItemLogic>
+    <ItemName>Noon</ItemName>
     <ImageNumber>0</ImageNumber>
+	<MetaData>12</MetaData>
+    <Quantity>1</Quantity>
+    <MarkedForDelete>false</MarkedForDelete>
+  </Item>
+  <Item>
+    <ItemLogic>TimePotion</ItemLogic>
+    <ItemName>Midnight</ItemName>
+    <ImageNumber>0</ImageNumber>
+	<MetaData>24</MetaData>
+    <Quantity>1</Quantity>
+    <MarkedForDelete>false</MarkedForDelete>
+  </Item>
+  <Item>
+    <ItemLogic>TimePotion</ItemLogic>
+    <ItemName>Dawn</ItemName>
+    <ImageNumber>0</ImageNumber>
+	<MetaData>6</MetaData>
+    <Quantity>1</Quantity>
+    <MarkedForDelete>false</MarkedForDelete>
+  </Item>
+  <Item>
+    <ItemLogic>TimePotion</ItemLogic>
+    <ItemName>Dusk</ItemName>
+    <ImageNumber>0</ImageNumber>
+	<MetaData>18</MetaData>
     <Quantity>1</Quantity>
     <MarkedForDelete>false</MarkedForDelete>
   </Item>
@@ -10,13 +35,7 @@
     <ItemLogic>ConvertingWordsToPower</ItemLogic>
     <ItemName>Converting Words To Power</ItemName>
     <ImageNumber>1</ImageNumber>
-    <Quantity>1</Quantity>
-    <MarkedForDelete>false</MarkedForDelete>
-  </Item>
-  <Item>
-    <ItemLogic>StrangePotion</ItemLogic>
-    <ItemName>Strange Potion</ItemName>
-    <ImageNumber>0</ImageNumber>
+	<MetaData>0</MetaData>
     <Quantity>1</Quantity>
     <MarkedForDelete>false</MarkedForDelete>
   </Item>
