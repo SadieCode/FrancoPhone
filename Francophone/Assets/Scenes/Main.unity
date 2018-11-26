@@ -8905,7 +8905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00:00 01/01
+  m_Text: 08:00 02/11
 --- !u!222 &929262949
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16175,7 +16175,7 @@ MonoBehaviour:
   variableStorage: {fileID: 1754814556}
   dialogueUI: {fileID: 1754814557}
   startNode: Forest
-  startAutomatically: 0
+  startAutomatically: 1
   automaticCommands: 1
 --- !u!4 &1754814559
 Transform:

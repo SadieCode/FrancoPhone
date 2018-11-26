@@ -8,7 +8,7 @@ public class TimeLogic : MonoBehaviour {
 
     //public Light lightSource;
     public Text txtTime;
-    static float min = 0;
+    public static float min = 0;
     public static int hour = 8;
     public static int day = 2;
     public static int weekDay = 6; //1 = sunday, 2 = monday... so on
@@ -174,6 +174,7 @@ public class TimeLogic : MonoBehaviour {
         hour = 8;
         min = 0;
         player.transform.position = playerSpawn.position;
+        PlayerCombat.health = 100;
         Invoke("HideScreen", 1.0f);
     }
 

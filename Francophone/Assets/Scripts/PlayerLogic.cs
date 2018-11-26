@@ -74,8 +74,9 @@ public class PlayerLogic : MonoBehaviour {
 
     public void Respawn()
     {
-        TimeLogic.day++;
+        TimeLogic.min = 0;
         TimeLogic.hour = 8;
+        TimeLogic.day++;
         transform.position = Spawn.position;
         Camera.main.GetComponent<CameraFollow>().BottomRightBound = null;
         Camera.main.GetComponent<CameraFollow>().TopLeftBound = null;

@@ -7,24 +7,25 @@ public class SpellCaster : MonoBehaviour{
     
     //Example sentences for testing
     public PlayerCombat player;
-    string[] QuestionPool = {"Mardi vient après lundi", "Mon anniversaire est le 17 mars", "Noël tombe un vendredi",
-                            "Je suis née au mois d'octobre","Mon père porte des chaussettes orange","Les corneilles sont noires",
-                            "Les bananes sont jaunes","Ma voiture est bleue"};
+    string[] QuestionPool = {"Mardi vient après lundi.", "Mon anniversaire est le 17 mars.", "Noël tombe un vendredi.",
+                            "Je suis née au mois d'octobre.","Mon père porte des chaussettes orange.","Les corneilles sont noires.",
+                            "Les bananes sont jaunes.","Ma voiture est bleue."};
     string Question;
     string[][] AnswerPool =
     {
-        new string[] {"Tuesday comes after Monday"},
-        new string[] {"My birthday is March 17"},
-        new string[] {"Christmas falls on a Friday"},
-        new string[] {"I was born in the month of October"},
-        new string[] {"My father wears orange socks"},
-        new string[] {"Crows are black"},
-        new string[] {"Bananas are yellow"},
-        new string[] {"My car is blue"}
+        new string[] {"Tuesday comes after Monday."},
+        new string[] {"My birthday is March 17."},
+        new string[] {"Christmas falls on a Friday."},
+        new string[] {"I was born in the month of October."},
+        new string[] {"My father wears orange socks."},
+        new string[] {"Crows are black."},
+        new string[] {"Bananas are yellow."},
+        new string[] {"My car is blue."}
     };
     string[] Answers;
     string ClosestAnswer;
     string playerAnswer;
+    int lastQuestion = -1;
     public static float powerLevel = 0;
 
     public InputField InputField;
@@ -43,6 +44,11 @@ public class SpellCaster : MonoBehaviour{
     {
         UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
         int index = UnityEngine.Random.Range(0, QuestionPool.Length);
+        while (index == lastQuestion)
+        {
+            index = UnityEngine.Random.Range(0, QuestionPool.Length);
+        }
+        lastQuestion = index;
         Question = QuestionPool[index];
         Answers = AnswerPool[index];
 
@@ -115,6 +121,8 @@ public class SpellCaster : MonoBehaviour{
             {
                 if (l > correctArray.Length - 1)
                 {
+                    wPowerLevel--;
+                    if(wPowerLevel < 0) { wPowerLevel = 0; }
                     break;
                 }
                 
