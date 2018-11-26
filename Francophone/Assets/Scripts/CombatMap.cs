@@ -31,7 +31,7 @@ public class CombatMap : MonoBehaviour {
                 PlayerLastPosition = collision.gameObject.transform.position;
                 Debug.Log(".");
                 UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
-                int i = UnityEngine.Random.Range(0, 8);
+                int i = UnityEngine.Random.Range(0, 2);
                 if (i == 0)
                 {
                     TimeLogic.stop = true;

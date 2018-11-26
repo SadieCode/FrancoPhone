@@ -137,6 +137,7 @@ public class SpellCaster : MonoBehaviour{
                 ClosestAnswer = Answers[k];
             }
         }
+        powerLevel = Mathf.Round(powerLevel);
         DisplayResult();
     }
 

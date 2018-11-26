@@ -31,8 +31,11 @@ public class InventoryLabels : MonoBehaviour {
 
     public void HandlePress()
     {
-        Item.GetType().GetMethod(Item.ItemLogic).Invoke(Item, null);
-        Item.Quantity--;
+        if (Item.Quantity > 0)
+        {
+            Item.GetType().GetMethod(Item.ItemLogic).Invoke(Item, null);
+            Item.Quantity--;
+        }
         txtQuantity.text = Item.Quantity + "";
         if (Item.Quantity <= 0)
         {

@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour {
     {
         Anim.SetTrigger("Attack");
         UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
-        int d = (int) Math.Round(attackDamage * UnityEngine.Random.Range(0.5f, 1.0f));
+        int d = (int) Math.Round(attackDamage * UnityEngine.Random.Range(0.7f, 1.0f));
         player.TakeDamage(d);
     }
 
