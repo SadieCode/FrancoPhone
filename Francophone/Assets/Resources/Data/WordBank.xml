@@ -11,6 +11,15 @@
 		</Noun>
 		<Noun>
 			<Type>Noun</Type>
+			<Fr>Fantôme</Fr>
+			<Eng>Ghost</Eng>
+			<Gender>Masc.</Gender>
+			<Plural>Fantômes</Plural>
+			<Ex>Tom thought he saw a ghost in his bedroom.</Ex>
+			<Trans>Tom pense avoir vu un fantôme dans sa chambre.</Trans>
+		</Noun>
+		<Noun>
+			<Type>Noun</Type>
 			<Fr>Bonjour</Fr>
 			<Eng>Hello</Eng>
 			<Plural>Bonjours</Plural>

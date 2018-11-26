@@ -1,0 +1,32 @@
+title: Forest
+tags: 
+colorID: 2
+position: 249,243
+---
+Jean: So are you going in or not?
+Clarice: Don't do it... Things live in there...
+    ->What kind of things?
+Clairce: Les fantômes!
+Jean: Ghosts aren't real, Clarice.
+<<AddWord GENERAL Fantôme>>
+New word discovered: Fantôme
+Jean: What are you waiting for?
+    -> *Sob uncontrollably*
+        Jean: Just go!
+    -> I'll go...
+        Jean: That's the spirit!
+===
+title: Clarice_Forest
+tags: 
+colorID: 3
+position: 522,159
+---
+Clarice: Be careful!
+===
+title: Jean_Forest
+tags: 
+colorID: 1
+position: 784,239
+---
+Jean: Hurry Up!
+===

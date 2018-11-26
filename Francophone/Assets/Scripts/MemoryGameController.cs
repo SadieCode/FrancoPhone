@@ -5,33 +5,33 @@ using UnityEngine.UI;
 
 public class MemoryGameController : MonoBehaviour {
 
-    [SerializeField]
-    private Sprite bgImage;
-
+    public Sprite bgImage;
     public Sprite[] options;
 
     public List<Sprite> gameOptions = new List<Sprite>();
     public List<Button> btns = new List<Button>();
 
-    private bool firstSelection, secondSelection;
+    public GameObject GamePanel;
+    public GameObject GamePanelText;
+    public GameObject StopInputPanel;
+
+    private bool firstSelected, secondSelected;
     private int firstSelectionIndex, secondSelectionIndex;
-    private string firstSelectionOption, secondSelectionOption;
+    private string firstSelectedCard, secondSelectedCard;
 
+    private int numOfPairs;
+    private int numOfMatches;
 
-    private int countCorrectGuesses;
-    private int gameGuesses;
+    public Text congrats;
 
-    void Awake()
-    {
-       // options = Resources.
-    }
     void Start()
     {
         GetButtons();
         AddListeners();
         AddGameOptions();
         Shuffle(gameOptions);
-        gameGuesses = gameOptions.Count / 2;
+        numOfPairs = gameOptions.Count / 2;
+        StopInputPanel.SetActive(false);
     }
 
     void GetButtons()
@@ -48,83 +48,101 @@ public class MemoryGameController : MonoBehaviour {
     void AddGameOptions()
     {
         int looper = btns.Count;
-        int index = 0;
 
         for(int i = 0; i < looper; i++)
         {
-            if(index == looper / 2)
-            {
-                index = 0;
-            }
-
-            gameOptions.Add(options[index]);
-
-            index++;
+            gameOptions.Add(options[i]);
         }
     }
+
     void AddListeners()
     {
         foreach(Button btn in btns)
         {
-            btn.onClick.AddListener(() => PickAnOption());
+            btn.onClick.AddListener(() => PickAnOption());         
         }
     }
     
     public void PickAnOption()
-    {
+    {        
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
 
-        if (!firstSelection)
-        {
-            firstSelection = true;
+        if (!firstSelected)
+        {            
+            firstSelected = true;
             firstSelectionIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-            firstSelectionOption = gameOptions[firstSelectionIndex].name;
+            firstSelectedCard = gameOptions[firstSelectionIndex].name;
             btns[firstSelectionIndex].image.sprite = gameOptions[firstSelectionIndex];
+            
         }
-        else if (!secondSelection)
+        else if (!secondSelected && firstSelected == true)
         {
-            secondSelection = true;
+            secondSelected = true;
             secondSelectionIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-            secondSelectionOption = gameOptions[secondSelectionIndex].name;
+            secondSelectedCard = gameOptions[secondSelectionIndex].name;
             btns[secondSelectionIndex].image.sprite = gameOptions[secondSelectionIndex];
         }
 
-        StartCoroutine(CheckIfTheSelectionsMatch());
+        if(firstSelected && secondSelected)
+        {
+            StartCoroutine(CheckIfTheSelectionsMatch());
+            
+        }
     }
 
     IEnumerator CheckIfTheSelectionsMatch()
     {
-        yield return new WaitForSeconds(1f);
+        StopInputPanel.SetActive(true);
 
-        if(firstSelectionOption == secondSelectionOption)
+        if(firstSelectedCard == secondSelectedCard + "1" || secondSelectedCard == firstSelectedCard + "1")
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
             btns[firstSelectionIndex].interactable = false;
             btns[secondSelectionIndex].interactable = false;
 
             btns[firstSelectionIndex].image.color = new Color(0, 0, 0, 0);
             btns[secondSelectionIndex].image.color = new Color(0, 0, 0, 0);
 
-            CheckIfTheGameIsFinished();
+            if(btns[firstSelectionIndex].image.color.a == 0 && btns[secondSelectionIndex].image.color.a == 0)
+            {
+                numOfMatches++;
+                CheckIfTheGameIsFinished();
+            }
+            
         }
         else
         {
             yield return new WaitForSeconds(.5f);
-
             btns[firstSelectionIndex].image.sprite = bgImage;
             btns[secondSelectionIndex].image.sprite = bgImage;
         }
-        yield return new WaitForSeconds(.5f);
-        firstSelection = secondSelection = false;
 
+        firstSelected = secondSelected = false;
+        StopInputPanel.SetActive(false);
     }
 
     void CheckIfTheGameIsFinished()
     {
-        if(countCorrectGuesses == gameGuesses)
+        if(numOfMatches == numOfPairs)
         {
-
+            StartCoroutine(GameOverTextAndAction());
         }
+    }
+
+    IEnumerator GameOverTextAndAction()
+    {
+        congrats.text = "Congratulations you got all the pairs!";
+        yield return new WaitForSeconds(5f);
+
+        GamePanel.SetActive(false);
+        GamePanelText.SetActive(false);
+    }
+
+    private IEnumerator PauseGame()
+    {
+        Time.timeScale = 0.0f;
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 1;
     }
 
     void Shuffle(List<Sprite> list)
