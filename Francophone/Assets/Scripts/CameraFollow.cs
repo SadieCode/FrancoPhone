@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour {
     // Use this for initialization
     void Start () {
         mainCam = GetComponent<Camera>();
-        mainCam.orthographicSize = (Screen.height / 100f) / 8f;
+        mainCam.orthographicSize = (Screen.height / 100f) / 6f;
         height = 2f * mainCam.orthographicSize;
         width = height * mainCam.aspect;
         oldPos = this.transform.position;

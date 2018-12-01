@@ -16429,7 +16429,7 @@ MonoBehaviour:
   variableStorage: {fileID: 1754814556}
   dialogueUI: {fileID: 1754814557}
   startNode: Forest
-  startAutomatically: 1
+  startAutomatically: 0
   automaticCommands: 1
 --- !u!4 &1754814559
 Transform:

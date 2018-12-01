@@ -11,7 +11,7 @@ public class SpellCaster : MonoBehaviour{
                             "Je suis née au mois d'octobre.","Mon père porte des chaussettes orange.","Les corneilles sont noires.",
                             "Les bananes sont jaunes.","Ma voiture est bleue."};
     string Question;
-    string[][] AnswerPool =
+    readonly string[][] AnswerPool =
     {
         new string[] {"Tuesday comes after Monday."},
         new string[] {"My birthday is March 17."},
@@ -64,76 +64,31 @@ public class SpellCaster : MonoBehaviour{
     {
         powerLevel = 0;
         playerAnswer = s;
-        List<string> attemptWords = new List<string>();
-        string attemptWord = null;
-        int i = 1;
-        foreach (char c in playerAnswer)
-        {
-            if (i == playerAnswer.Length)
-            {
-                attemptWord = attemptWord + c;
-                attemptWords.Add(attemptWord);
-                attemptWord = null;
-            }
-            else if (c != ' ')
-            {
-                attemptWord = attemptWord + c;
-            }
-            else
-            {
-                attemptWords.Add(attemptWord);
-                attemptWord = null;
-            }
-            i++;
-        }
+        string[] playerAnswerSplit = playerAnswer.Split(' ');
 
         for (int k = 0; k < Answers.Length; k++)
         {
-            List<string> words = new List<string>();
-            string word = null;
-            int j = 1;
-            string correctSentence = Answers[k];
-            foreach (char c in correctSentence)
-            {
-                if (j == correctSentence.Length)
-                {
-                    word = word + c;
-                    words.Add(word);
-                    word = null;
-                }
-                else if (c != ' ')
-                {
-                    word = word + c;
-                }
-                else
-                {
-                    words.Add(word);
-                    word = null;
-                }
-                j++;
-            }
+            string correctAnswer = Answers[k];
+            string[] correctAnswerSplit = correctAnswer.Split(' ');
+            float tempPowerLevel = 0;
 
-            string[] attemptArray = attemptWords.ToArray();
-            string[] correctArray = words.ToArray();
-
-            float wPowerLevel = 0;
-            for (int l = 0; l < attemptArray.Length; l++)
+            for (int l = 0; l < playerAnswerSplit.Length; l++)
             {
-                if (l > correctArray.Length - 1)
+                if (l > correctAnswerSplit.Length - 1)
                 {
-                    wPowerLevel--;
-                    if(wPowerLevel < 0) { wPowerLevel = 0; }
+                    tempPowerLevel--;
+                    if(tempPowerLevel < 0) { tempPowerLevel = 0; }
                     break;
                 }
                 
-                if (correctArray[l] == attemptArray[l]) {
-                    wPowerLevel++;
+                if (correctAnswerSplit[l] == playerAnswerSplit[l]) {
+                    tempPowerLevel++;
                 }
             }
 
-            if (wPowerLevel != 0) { wPowerLevel = (wPowerLevel / correctArray.Length) * 100; }
-            if(wPowerLevel >= powerLevel) {
-                powerLevel = wPowerLevel;
+            if (tempPowerLevel != 0) { tempPowerLevel = (tempPowerLevel / correctAnswerSplit.Length) * 100; }
+            if(tempPowerLevel >= powerLevel) {
+                powerLevel = tempPowerLevel;
                 ClosestAnswer = Answers[k];
             }
         }
